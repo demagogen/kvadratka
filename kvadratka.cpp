@@ -3,11 +3,10 @@
 #include<math.h>
 
 int main() {
-    const double ZERO = 0.0000001;
-    double a, b, c; //коэффициенты
-    double x1, x2; //корни
-    double discriminant;
-    a = b = c = x1 = x2 = discriminant = NAN;
+    const double EPS = 0.0000001;
+    double a = NAN, b = NAN, c = NAN; //коэффициенты
+    double x1 = NAN, x2 = NAN; //корни
+    double discriminant = NAN;
 
     printf("Введите коэффициенты квадратного уравнения\n");
     printf("Первый: ");
@@ -19,11 +18,11 @@ int main() {
     printf("Третий: ");
     scanf("%lf", &c);
 
-    if (fabs(a) < ZERO) {
+    if (fabs(a) < EPS) {
 
-        if (fabs(b) < ZERO) {
+        if (fabs(b) < EPS) {
 
-            if (fabs(c) < ZERO) {
+            if (fabs(c) < EPS) {
                 printf("Решение уравнения -- множество ");
                 printf("действительных чисел");
             }
@@ -42,13 +41,13 @@ int main() {
     else {
         discriminant = b*b - 4*a*c;
 
-        if (discriminant >= ZERO) {
+        if (discriminant >= EPS) {
             x1 = (-b + sqrt(discriminant))/(2*a);
             x2 = (-b - sqrt(discriminant))/(2*a);
             printf("Два корня: %lf %lf", x1, x2);
         }
 
-        else if (fabs(discriminant) < ZERO) {
+        else if (fabs(discriminant) < EPS) {
             x1 = x2 = -b/(2*a);
             printf("Один корень: %lf", x1);
         }

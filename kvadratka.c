@@ -3,24 +3,24 @@
 #include<math.h>
 
 int main() {
-    double a, b, c; //коэффициенты
-    double x1, x2; //корни
+    double a, b, c; //РєРѕСЌС„С„РёС†РёРµРЅС‚С‹
+    double x1, x2; //РєРѕСЂРЅРё
     double discriminant;
-    printf("Введите коэффициенты квадратного уравнения\n");
-    printf("Первый: ");
+    printf("Р’РІРµРґРёС‚Рµ РєРѕСЌС„С„РёС†РёРµРЅС‚С‹ РєРІР°РґСЂР°С‚РЅРѕРіРѕ СѓСЂР°РІРЅРµРЅРёСЏ\n");
+    printf("РџРµСЂРІС‹Р№: ");
     scanf("%lf", &a);
-    printf("Второй: ");
+    printf("Р’С‚РѕСЂРѕР№: ");
     scanf("%lf", &b);
-    printf("Третий: ");
+    printf("РўСЂРµС‚РёР№: ");
     scanf("%lf", &c);
 
     if (a < 0.0000001 && a > -0.0000001) {
         if (b < 0.0000001 && b > -0.0000001) {
-            printf("Нет корней");
+            printf("РќРµС‚ РєРѕСЂРЅРµР№");
         }
         else {
             x1 = x2 = -(c/b);
-            printf("Один корень: %lf", x1);
+            printf("РћРґРёРЅ РєРѕСЂРµРЅСЊ: %lf", x1);
         }
     }
     else {
@@ -28,15 +28,15 @@ int main() {
         if (discriminant >= 0.0000001) {
             x1 = (-b + sqrt(discriminant))/(2*a);
             x2 = (-b - sqrt(discriminant))/(2*a);
-            printf("Два корня: %lf, %lf", x1, x2);
+            printf("Р”РІР° РєРѕСЂРЅСЏ: %lf, %lf", x1, x2);
         }
         else if (discriminant < 0.0000001 && \
         discriminant > -0.0000001) {
             x1 = x2 = -b/(2*a);
-            printf("Один корень: %lf", x1);
+            printf("РћРґРёРЅ РєРѕСЂРµРЅСЊ: %lf", x1);
         }
         else {
-            printf("Нет корней");
+            printf("РќРµС‚ РєРѕСЂРЅРµР№");
         }
     }
     return 0;

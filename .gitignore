@@ -1,5 +1,4 @@
-"C:\Users\sumpl\GitHub\kvadratka\.gitignore"
-"C:\Users\sumpl\GitHub\kvadratka\kvadratka.cpp.save"
-"C:\Users\sumpl\GitHub\kvadratka\kvadratka.exe"
-"C:\Users\sumpl\GitHub\kvadratka\.git-auto"
-
+kvadratka.c.save
+kvadratka.exe
+.gitignore
+\.git-auto

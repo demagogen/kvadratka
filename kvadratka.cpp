@@ -61,7 +61,6 @@ double *x1, double *x2, char *flag) {
     }
 }
 
-
 void print_solutions(double x1, double x2, char flag) {
     if (flag == '0')
         printf("Нет корней");

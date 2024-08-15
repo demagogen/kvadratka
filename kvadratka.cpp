@@ -2,26 +2,31 @@
 #include<TXLib.h>
 #include<math.h>
 
+enum number_of_solutions {no_solutions, one_solution,
+two_solutions, inf_number_of_solutions};
+
 bool is_variable_equal_to_zero(double val);
 void enter_se_parameters(double *a, double *b, double *c);
 void solve_square_equation(double a, double b, \
-double c, double *x1, double *x2, char *flag);
-void print_solutions(double x1, double x2, char flag);
+double c, double *x1, double *x2, number_of_solutions *num_of_sol);
+void print_solutions(double x1, double x2,
+number_of_solutions num_of_sol);
+
+const double EPS = 0.0000001;
 
 int main() {
+    enum number_of_solutions num_of_sol;
     double a = NAN, b = NAN, c = NAN; // коэффициенты кв. ур.
     double x1 = NAN, x2 = NAN; // корни
-    char flag = NAN; //количество корней
 
     enter_se_parameters(&a, &b, &c);
-    solve_square_equation(a, b, c, &x1, &x2, &flag);
-    print_solutions(x1, x2, flag);
+    solve_square_equation(a, b, c, &x1, &x2, &num_of_sol);
+    print_solutions(x1, x2, num_of_sol);
 
     return 0;
 }
 
 bool is_variable_equal_to_zero(double val) {
-    const double EPS = 0.0000001;
     return (fabs(val) < EPS);
 }
 
@@ -38,25 +43,24 @@ void enter_se_parameters(double *a, double *b, double *c) {
     scanf("%lf", c);
 }
 
-void solve_square_equation(double a, double b, double c, \
-double *x1, double *x2, char *flag) {
-    const double EPS = 0.0000001;
+void solve_square_equation(double a, double b, double c,
+double *x1, double *x2, number_of_solutions *num_of_sol) {
     double discriminant = NAN;
 
-    if (is_variable_equal_to_zero(a) && \
-    is_variable_equal_to_zero(b) && \
+    if (is_variable_equal_to_zero(a) &&
+    is_variable_equal_to_zero(b) &&
     is_variable_equal_to_zero(c)) {
-        *flag = '3'; // бесконечное количество корней
+        *num_of_sol = inf_number_of_solutions; // бесконечное количество корней
     }
-    else if (is_variable_equal_to_zero(a) && \
-    is_variable_equal_to_zero(b) && \
+    else if (is_variable_equal_to_zero(a) &&
+    is_variable_equal_to_zero(b) &&
     !is_variable_equal_to_zero(c)) {
-        *flag = '0'; // нет корней
+        *num_of_sol = no_solutions; // нет корней
     }
-    else if (is_variable_equal_to_zero(a) && \
-    !is_variable_equal_to_zero(b) && \
+    else if (is_variable_equal_to_zero(a) &&
+    !is_variable_equal_to_zero(b) &&
     !is_variable_equal_to_zero(c)) {
-        *flag = '1'; // один корень
+        *num_of_sol = one_solution; // один корень
         *x1 = *x2 = -c/b;
     }
     else {
@@ -64,29 +68,30 @@ double *x1, double *x2, char *flag) {
         if (discriminant >= EPS) {
             *x1 = (-b + sqrt(discriminant))/(2*a);
             *x2 = (-b - sqrt(discriminant))/(2*a);
-            *flag = '2'; // два корня
+            *num_of_sol = two_solutions; // два корня
         }
         else if (is_variable_equal_to_zero(discriminant)) {
             *x1 = *x2 = -b/(2*a);
-            *flag = '1'; //один корень
+            *num_of_sol = one_solution; //один корень
         }
         else {
-            *flag = '0'; //нет корней
+            *num_of_sol = no_solutions; //нет корней
         }
     }
 }
 
-void print_solutions(double x1, double x2, char flag) {
-    if (flag == '0')
+void print_solutions(double x1, double x2,
+number_of_solutions num_of_sol) {
+    if (num_of_sol == no_solutions)
         printf("Нет корней");
 
-    else if (flag == '1')
+    else if (num_of_sol == one_solution)
         printf("Один корень: %lf", x1);
 
-    else if (flag == '2')
+    else if (num_of_sol == two_solutions)
         printf("Два корня: %lf %lf", x1, x2);
 
-    else if (flag == '3')
+    else if (num_of_sol == inf_number_of_solutions)
         printf("Бесконечное количество корней");
     else
         printf("Error");

@@ -2,6 +2,7 @@
 #include<TXLib.h>
 #include<math.h>
 
+bool is_variable_equal_to_zero(double val);
 void enter_se_parameters(double *a, double *b, double *c);
 void solve_square_equation(double a, double b, \
 double c, double *x1, double *x2, char *flag);
@@ -17,6 +18,11 @@ int main() {
     print_solutions(x1, x2, flag);
 
     return 0;
+}
+
+bool is_variable_equal_to_zero(double val) {
+    const double EPS = 0.0000001;
+    return (fabs(val) < EPS);
 }
 
 void enter_se_parameters(double *a, double *b, double *c) {
@@ -37,11 +43,19 @@ double *x1, double *x2, char *flag) {
     const double EPS = 0.0000001;
     double discriminant = NAN;
 
-    if (fabs(a) < EPS && fabs(b) < EPS && fabs(c) < EPS)
+    if (is_variable_equal_to_zero(a) && \
+    is_variable_equal_to_zero(b) && \
+    is_variable_equal_to_zero(c)) {
         *flag = '3'; // бесконечное количество корней
-    else if (fabs(a) < EPS && fabs(b) < EPS && fabs(c) >= EPS)
+    }
+    else if (is_variable_equal_to_zero(a) && \
+    is_variable_equal_to_zero(b) && \
+    !is_variable_equal_to_zero(c)) {
         *flag = '0'; // нет корней
-    else if (fabs(a) < EPS && fabs(b) >= EPS && fabs(c) >= EPS) {
+    }
+    else if (is_variable_equal_to_zero(a) && \
+    !is_variable_equal_to_zero(b) && \
+    !is_variable_equal_to_zero(c)) {
         *flag = '1'; // один корень
         *x1 = *x2 = -c/b;
     }
@@ -52,12 +66,13 @@ double *x1, double *x2, char *flag) {
             *x2 = (-b - sqrt(discriminant))/(2*a);
             *flag = '2'; // два корня
         }
-        else if (fabs(discriminant) < EPS) {
+        else if (is_variable_equal_to_zero(discriminant)) {
             *x1 = *x2 = -b/(2*a);
             *flag = '1'; //один корень
         }
-        else
+        else {
             *flag = '0'; //нет корней
+        }
     }
 }
 

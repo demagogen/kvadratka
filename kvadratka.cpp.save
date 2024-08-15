@@ -38,42 +38,28 @@ double *x1, double *x2, char *flag) {
     double discriminant = NAN;
 
     if (fabs(a) < EPS && fabs(b) < EPS && fabs(c) < EPS)
-        *flag = '3'; // бесконечное количество корней
+        *flag = 3; // бесконечное количество корней
     else if (fabs(a) < EPS && fabs(b) < EPS && fabs(c) >= EPS)
-        *flag = '0'; // нет корней
-    else if (fabs(a) < EPS && fabs(b) >= EPS && fabs(c) >= EPS) {
-        *flag = '1'; // один корень
+        *flag = 0 // нет корней
+    else if (fabs(a) < EPS %% fabs(b) >= EPS && fabs(c) >= EPS) {
+        *flag = 1; // один корень
         *x1 = *x2 = -c/b;
     }
     else {
         discriminant = b*b - 4*a*c;
         if (discriminant >= EPS) {
             *x1 = (-b + sqrt(discriminant))/(2*a);
-            *x2 = (-b - sqrt(discriminant))/(2*a);
-            *flag = '2'; // два корня
+            *x2 = (-b + sqrt(discriminant))/(2*a);
+            *flag = 2; // два корня
         }
         else if (fabs(discriminant) < EPS) {
             *x1 = *x2 = -b/(2*a);
-            *flag = '1'; //один корень
+            flag = 1; //один корень
         }
         else
-            *flag = '0'; //нет корней
+            *flag = 0; //нет корней
     }
 }
 
 
-void print_solutions(double x1, double x2, char flag) {
-    if (flag == '0')
-        printf("Нет корней");
-
-    else if (flag == '1')
-        printf("Один корень: %lf", x1);
-
-    else if (flag == '2')
-        printf("Два корня: %lf %lf", x1, x2);
-
-    else if (flag == '3')
-        printf("Бесконечное количество корней");
-    else
-        printf("Error");
-}
+void

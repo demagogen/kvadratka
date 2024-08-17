@@ -3,11 +3,6 @@
 
 #include "kvadratka_functions.h"
 
-struct SE_SOLUTIONS solutions {
-    NAN, NAN,
-    ERROR_NUMBER
-};
-
 const double EPS = 0.0000001;
 
 bool is_var_equal_to_zero(double val) {

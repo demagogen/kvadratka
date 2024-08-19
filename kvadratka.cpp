@@ -1,12 +1,10 @@
-#include <stdio.h>
 #include <TXLib.h>
-#include <math.h>
 
 #include "kvadratka_functions.h"
 
 int main() {
     double a = NAN, b = NAN, c = NAN; // коэффициенты кв.
-    struct SE_SOLUTIONS solutions {
+    SE_SOLUTIONS solutions {
         NAN, NAN,
         ERROR_NUMBER
     };

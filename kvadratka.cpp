@@ -1,10 +1,5 @@
-#include <TXLib.h>
-
-#include "kvadratka_functions.h"
-
-int hui() {
-    return 0;
-}
+#include <math.h>
+#include "kvadratka_header.h"
 
 int main() {
     double a = NAN, b = NAN, c = NAN; // коэффициенты кв.

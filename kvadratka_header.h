@@ -1,5 +1,5 @@
-#ifndef kvadratka_functions
-#define kvadratka_functions
+#ifndef KVADRATKA_FUNCTIONS_H_
+#define KVADRATKA_FUNCTIONS_H_
 enum NUMBER_OF_SOLUTIONS {
     ERROR_NUMBER,
     NO_SOLUTIONS,
@@ -16,5 +16,5 @@ struct SE_SOLUTIONS{
 bool is_var_equal_to_zero(double val);
 void enter_se_parameters(double *a, double *b, double *c);
 void solve_square_equation(double a, double b, double c, SE_SOLUTIONS *solutions);
-void print_solutions(SE_SOLUTIONS *solutions);
+void print_solutions(const SE_SOLUTIONS *solutions);
 #endif

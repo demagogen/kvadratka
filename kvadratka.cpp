@@ -2,6 +2,10 @@
 
 #include "kvadratka_functions.h"
 
+int hui() {
+    return 0;
+}
+
 int main() {
     double a = NAN, b = NAN, c = NAN; // коэффициенты кв.
     SE_SOLUTIONS solutions {

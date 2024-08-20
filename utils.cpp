@@ -2,6 +2,10 @@
 
 #include "utils.h"
 
-bool is_var_equal_to_zero(double val) {
-    return (fabs(val) < EPS);
+bool var_is_bigger_than_zero(double var) {
+    return (var > EPS);
+}
+
+bool is_var_equal_to_zero(double var) {
+    return (fabs(var) < EPS);
 }

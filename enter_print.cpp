@@ -22,7 +22,7 @@ void enter_se_parameters(double *a, double *b, double *c) {
         }
         while (getchar() != '\n');
     }
-    assert(*a == NAN);
+    assert(*a == NAN); // TODO DO NOT USE ======================= with doubles
     assert(*b == NAN);
     assert(*c == NAN);
 }

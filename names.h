@@ -1,0 +1,10 @@
+#ifndef _NAMES_H_
+#define _NAMES_H_
+enum NUMBER_OF_SOLUTIONS {
+    ERROR_NUMBER,
+    NO_SOLUTIONS,
+    ONE_SOLUTION,
+    TWO_SOLUTIONS,
+    INF_NUMBER_OF_SOLUTIONS
+};
+#endif

@@ -1,5 +1,9 @@
 #include <math.h>
-#include "kvadratka_header.h"
+
+#include "utils.h"
+#include "names.h"
+#include "structures.h"
+#include "solve_square_equation.h"
 
 void solve_square_equation(double a, double b, double c, SE_SOLUTIONS *solutions) {
     double discriminant = NAN;
@@ -8,8 +12,7 @@ void solve_square_equation(double a, double b, double c, SE_SOLUTIONS *solutions
     if (is_var_equal_to_zero(a)) {
         if (is_var_equal_to_zero(b)) {
             if (is_var_equal_to_zero(c)) {
-                solutions->num_of_sol =
-                    INF_NUMBER_OF_SOLUTIONS;
+                solutions->num_of_sol = INF_NUMBER_OF_SOLUTIONS;
             }
             else {
                 solutions->num_of_sol = NO_SOLUTIONS;

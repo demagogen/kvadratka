@@ -1,6 +1,11 @@
 // kvadratka.cpp -- программа для решения квадратных уравнений
 #include <math.h>
-#include "kvadratka_header.h"
+
+#include "names.h"
+#include "structures.h"
+#include "utils.h"
+#include "enter_print.h"
+#include "solve_square_equation.h"
 
 int main() {
     double a = NAN, b = NAN, c = NAN; // коэффициенты кв.

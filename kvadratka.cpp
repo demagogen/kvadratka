@@ -1,3 +1,4 @@
+// kvadratka.cpp -- программа для решения квадратных уравнений
 #include <math.h>
 #include "kvadratka_header.h"
 

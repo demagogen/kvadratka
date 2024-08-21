@@ -1,5 +1,13 @@
-#ifndef _STRUCTURES_H_
-#define _STRUCTURES_H_
+#ifndef _SE_STRUCTURE_H_
+#define _SE_STRUCTURE_H_
+enum NUMBER_OF_SOLUTIONS {
+    ERROR_NUMBER,
+    NO_SOLUTIONS,
+    ONE_SOLUTION,
+    TWO_SOLUTIONS,
+    INF_NUMBER_OF_SOLUTIONS
+};
+
 struct SE_SOLUTIONS{
     double x1, x2;
     NUMBER_OF_SOLUTIONS num_of_sol;

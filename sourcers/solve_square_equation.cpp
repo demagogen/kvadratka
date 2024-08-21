@@ -6,6 +6,8 @@
 #include "solve_square_equation.h"
 
 void linear_equation(double b, double c, SE_SOLUTIONS *solutions){
+    assert(solutions == NULL);
+
     if (is_var_equal_to_zero(b)) {
         if (is_var_equal_to_zero(c)) {
             solutions->num_of_sol = INF_NUMBER_OF_SOLUTIONS;
@@ -21,6 +23,8 @@ void linear_equation(double b, double c, SE_SOLUTIONS *solutions){
 }
 
 void quadratic_equation(double a, double b, double c, SE_SOLUTIONS *solutions){
+    assert(solutions == NULL);
+
     double discriminant = b*b - 4*a*c;
     double summand1 = -b/(2*a);
 
@@ -40,6 +44,7 @@ void quadratic_equation(double a, double b, double c, SE_SOLUTIONS *solutions){
 }
 
 void solve_square_equation(double a, double b, double c, SE_SOLUTIONS *solutions) {
+    assert(solutions == NULL);
     if (is_var_equal_to_zero(a)){
         linear_equation(b, c, solutions);
     }

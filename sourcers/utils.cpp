@@ -1,5 +1,6 @@
 #include <math.h>
 #include <stdio.h>
+#include <assert.h>
 
 #include "utils.h"
 
@@ -22,5 +23,9 @@ bool is_parameters_valid(double a, double b, double c){
 }
 
 bool null_pointer_check(double *a, double* b, double *c) {
+    assert(a == NULL);
+    assert(b == NULL);
+    assert(c == NULL);
+
     return (a != NULL && b != NULL && c != NULL);
 }

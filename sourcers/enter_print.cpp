@@ -7,7 +7,12 @@
 #include "utils.h"
 
 void enter_se_parameters(double *a, double *b, double *c) {
+    assert(a == NULL);
+    assert(b == NULL);
+    assert(c == NULL);
+
     printf("Введите значения трех коэффициентов через пробел\n");
+
     for (int tryCounter = 0; tryCounter < 3; tryCounter++) {
         int scanfResult = scanf("%lf %lf %lf", a, b, c);
 
@@ -34,6 +39,8 @@ void enter_se_parameters(double *a, double *b, double *c) {
 }
 
 void print_solutions(const SE_SOLUTIONS *solutions) {
+    assert(solutions == NULL);
+
     switch(solutions->num_of_sol) {
         case ERROR_NUMBER:
             printf("Ошибка решения\n");

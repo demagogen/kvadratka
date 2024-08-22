@@ -1,15 +1,14 @@
 #include <math.h>
-
 #include <assert.h>
+
 #include "utils.h"
-#include "structures.h"
 #include "solve_square_equation.h"
 
 void linear_equation(double b, double c, SE_SOLUTIONS *solutions){
-    assert(solutions == NULL);
+    assert(solutions != NULL);
 
-    if (is_var_equal_to_zero(b)) {
-        if (is_var_equal_to_zero(c)) {
+    if (comparing_function(EPS, b) == MORE && comparing_function(b, -EPS) == MORE) {
+        if (comparing_function(EPS, c) == MORE && comparing_function(c, -EPS) == MORE) {
             solutions->num_of_sol = INF_NUMBER_OF_SOLUTIONS;
         }
         else {
@@ -23,18 +22,18 @@ void linear_equation(double b, double c, SE_SOLUTIONS *solutions){
 }
 
 void quadratic_equation(double a, double b, double c, SE_SOLUTIONS *solutions){
-    assert(solutions == NULL);
+    assert(solutions != NULL);
 
     double discriminant = b*b - 4*a*c;
     double summand1 = -b/(2*a);
 
-    if (var_is_bigger_than_zero(discriminant)) {
+    if (comparing_function(discriminant, EPS) == MORE || comparing_function(discriminant, EPS) == EQUAL) {
         double summand2 = sqrt(discriminant)/(2*a);
         solutions->x1 = summand1 + summand2;
         solutions->x2 = summand1 - summand2;
         solutions->num_of_sol = TWO_SOLUTIONS;
     }
-    else if (is_var_equal_to_zero(discriminant)){
+    else if (comparing_function(EPS, discriminant) == MORE && comparing_function(discriminant, -EPS) == MORE){
         solutions->x1 = summand1;
         solutions->num_of_sol = ONE_SOLUTION;
     }
@@ -44,8 +43,8 @@ void quadratic_equation(double a, double b, double c, SE_SOLUTIONS *solutions){
 }
 
 void solve_square_equation(double a, double b, double c, SE_SOLUTIONS *solutions) {
-    assert(solutions == NULL);
-    if (is_var_equal_to_zero(a)){
+    assert(solutions != NULL);
+    if (comparing_function(EPS, a) == MORE && comparing_function(a, -EPS) == MORE){
         linear_equation(b, c, solutions);
     }
     else {

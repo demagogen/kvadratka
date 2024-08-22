@@ -2,23 +2,19 @@
 #include <assert.h>
 #include <math.h>
 
-#include "structures.h"
+#include "solve_square_equation.h"
 #include "enter_print.h"
 #include "utils.h"
 
 void enter_se_parameters(double *a, double *b, double *c) {
-    assert(a == NULL);
-    assert(b == NULL);
-    assert(c == NULL);
+    assert(a != NULL);
+    assert(b != NULL);
+    assert(c != NULL);
 
     printf("Введите значения трех коэффициентов через пробел\n");
 
     for (int tryCounter = 0; tryCounter < 3; tryCounter++) {
         int scanfResult = scanf("%lf %lf %lf", a, b, c);
-
-        if (!null_pointer_check(a, b, c)) {
-            printf("Ошибка -- невозможный адрес переменной\n");
-        }
 
         if (!is_parameters_valid(*a, *b, *c)) {
             printf("Невозможные значения\n");
@@ -35,11 +31,12 @@ void enter_se_parameters(double *a, double *b, double *c) {
         }
 
         clear_buffer();
+
     }
 }
 
 void print_solutions(const SE_SOLUTIONS *solutions) {
-    assert(solutions == NULL);
+    assert(solutions != NULL);
 
     switch(solutions->num_of_sol) {
         case ERROR_NUMBER:

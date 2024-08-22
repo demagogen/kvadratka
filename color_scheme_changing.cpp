@@ -8,9 +8,8 @@ void graphic_printf(const char *st, COLOR color, STYLE style, ...) {
     char *pointer;
 
     va_start(argument_pointer, style);
-    printf("\033[");
 
-    esc_sequence_start(color, style);
+    change_color(color, style);
 
     vprintf(st, argument_pointer);
 
@@ -18,8 +17,10 @@ void graphic_printf(const char *st, COLOR color, STYLE style, ...) {
     va_end(argument_pointer);
 }
 
-void esc_sequence_start(COLOR color, STYLE style) {
-        switch(style) {
+void change_color(COLOR color, STYLE style) {
+    printf("\033[");
+
+    switch(style) {
         case RESET:
             printf("0;");
             break;

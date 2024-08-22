@@ -11,6 +11,6 @@ enum STYLE {
     BOLD  = 1,
 };
 
-void esc_sequence_start(COLOR color, STYLE style);
+void change_color(COLOR color, STYLE style);
 void graphic_printf(const char *st, COLOR color, STYLE style, ...);
 #endif

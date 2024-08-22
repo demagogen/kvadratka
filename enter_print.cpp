@@ -18,7 +18,7 @@ int programm_options_input() {
     graphic_printf("Выберите действие"
            "\n\tРешение квадратного уравнения (введите 1)"
            "\n\tЗапустить тест программы      (введите 2)\n", BLACK, BOLD);
-    scanf("100%d[^\n]", &choice); // TODO input error handling
+    scanf("%1d", &choice); // TODO input error handling
     return choice;
 }
 

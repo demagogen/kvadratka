@@ -21,7 +21,7 @@ static const TEST_DATA test_data_array[] {
         .a = 0,
         .b = 0,
         .c = 1,
-        .x1_ex = NAN,
+        .x1_ex = NAN, //TODO ISNAN and ISFINITE correct checker
         .x2_ex = NAN,
         .num_of_sol_ex = NO_SOLUTIONS,
     },

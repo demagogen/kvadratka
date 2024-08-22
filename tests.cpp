@@ -7,29 +7,29 @@
 
 static const TEST_DATA test_data_array[] {
     {
-    1,
-    0, 0, 0, NAN, NAN,
-    INF_NUMBER_OF_SOLUTIONS,
+        .number_of_test = 1, // TODO do this for all (optional)
+        0, 0, 0, NAN, NAN,
+        INF_NUMBER_OF_SOLUTIONS,
     },
     {
-    2,
-    0, 0, 1, NAN, NAN,
-    NO_SOLUTIONS,
+        2,
+        0, 0, 1, NAN, NAN,
+        NO_SOLUTIONS,
     },
     {
-    3,
-    0, 1, 1, -1.0, NAN,
-    ONE_SOLUTION,
+        3,
+        0, 1, 1, -1.0, NAN,
+        ONE_SOLUTION,
     },
     {
-    4,
-    0, 1, 0, 0.0, NAN,
-    ONE_SOLUTION,
+        4,
+        0, 1, 0, 0.0, NAN,
+        ONE_SOLUTION,
     },
     {
-    5,
-    1, 0, 0, 0.0, NAN,
-    ONE_SOLUTION,
+        5,
+        1, 0, 0, 0.0, NAN,
+        ONE_SOLUTION,
     }
 };
 
@@ -72,23 +72,3 @@ void test_functions_runner() {
                           &solutions_test);
     }
 }
-// int array[30] = {};
-// TestData sarray[100] = {}; // TODO use static
-
-//void run_tests() {
-//    static int a = 0; // TODO research this shit
-//
-//    // TODO test results structs
-//    // TODO array of test data structs
-//    run_test(1, 0, 0, 0, NAN, NAN, INF_NUMBER_OF_SOLUTIONS);
-//    run_test(2, 0, 0, 1, NAN, NAN, NO_SOLUTIONS);
-//    run_test(3, 0, 1, 0, 0.0, NAN, ONE_SOLUTION);
-//    run_test(4, 1, 0, 0, 0.0, NAN, ONE_SOLUTION);
-//    run_test(5, 1, 1, 0, 0.0, -1, TWO_SOLUTIONS);
-//    run_test(6, 1, 0, 1, NAN, NAN, NO_SOLUTIONS);
-//    run_test(7, 0, 1, 1, -1, NAN, NO_SOLUTIONS);
-//    run_test(8, 1, 2, 1, 1, NAN, ONE_SOLUTION);
-//    run_test(9, 1, 1, -6, 2, -3, TWO_SOLUTIONS);
-//    run_test(10, 0.5, 0.5, -3, 1, -1.5, TWO_SOLUTIONS);
-//    run_test(11, 10, 1, 10, NAN, NAN, NO_SOLUTIONS);
-//    run_test(12, 0.1, 0.2, 0.1, 1, NAN, ONE_SOLUTION);

@@ -3,7 +3,7 @@
 const double EPS = 1e-7;
 
 enum COMPARE_RESULT{
-    MORE  = 0,
+    MORE  = 0, // TODO more often layout is more = 1, equal = 0, less = -1
     LESS  = 1,
     EQUAL = 2,
 };

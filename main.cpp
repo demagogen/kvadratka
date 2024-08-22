@@ -13,7 +13,7 @@ int main() {
         ERROR_NUMBER
     };
 
-    if (asking_choice() == 1) {
+    if (asking_choice() == 1) { // TODO asking_choise is unclear
         enter_se_parameters(&a, &b, &c);
         solve_square_equation(a, b, c, &solutions);
         print_solutions(&solutions);

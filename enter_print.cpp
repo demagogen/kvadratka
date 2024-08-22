@@ -9,7 +9,7 @@
 int asking_choice() {
     int choice = 0;
     printf("Выберите действие\nРешение квадратного уравнения (введите 1)\nЗапустить тест программы (введите 2)\n");
-    scanf("%d", &choice);
+    scanf("%d", &choice); // TODO input error handling
     return choice;
 }
 
@@ -20,7 +20,7 @@ void enter_se_parameters(double *a, double *b, double *c) {
 
     printf("Введите значения трех коэффициентов через пробел\n");
 
-    for (int tryCounter = 0; tryCounter < 3; tryCounter++) {
+    for (int tryCounter = 0; tryCounter < 3; tryCounter++) { // TODO come up with a name for '3'
         int scanfResult = scanf("%lf %lf %lf", a, b, c);
 
         if (!is_parameters_valid(*a, *b, *c)) {
@@ -38,7 +38,6 @@ void enter_se_parameters(double *a, double *b, double *c) {
         }
 
         clear_buffer();
-
     }
 }
 

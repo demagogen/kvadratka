@@ -3,6 +3,7 @@
 
 #include "utils.h"
 #include "solve_square_equation.h"
+#include "tests.h"
 
 void linear_equation(double b, double c, SE_SOLUTIONS *solutions){
     assert(solutions != NULL);

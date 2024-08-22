@@ -5,7 +5,37 @@
 #include "solve_square_equation.h"
 #include "tests.h"
 
-bool check_test_result(TEST_DATA *test_data, SE_SOLUTIONS *solutions_test) {
+static const TEST_DATA test_data_array[] {
+    {
+    1,
+    0, 0, 0, NAN, NAN,
+    INF_NUMBER_OF_SOLUTIONS,
+    },
+    {
+    2,
+    0, 0, 1, NAN, NAN,
+    NO_SOLUTIONS,
+    },
+    {
+    3,
+    0, 1, 1, -1.0, NAN,
+    ONE_SOLUTION,
+    },
+    {
+    4,
+    0, 1, 0, 0.0, NAN,
+    ONE_SOLUTION,
+    },
+    {
+    5,
+    1, 0, 0, 0.0, NAN,
+    ONE_SOLUTION,
+    }
+};
+
+static const int quantity_of_tests = sizeof(test_data_array) / sizeof(test_data_array[0]);
+
+bool check_test_result(const TEST_DATA *test_data, SE_SOLUTIONS *solutions_test) {
     solve_square_equation(test_data->a, test_data->b, test_data->c, solutions_test);
 
     if (comparing_function(solutions_test->x1, test_data->x1_ex) == EQUAL &&
@@ -18,7 +48,7 @@ bool check_test_result(TEST_DATA *test_data, SE_SOLUTIONS *solutions_test) {
     }
 }
 
-void print_test_result(bool check_test_result, TEST_DATA *test_data, SE_SOLUTIONS *solutions_test) {
+void print_test_result(bool check_test_result, const TEST_DATA *test_data, SE_SOLUTIONS *solutions_test) {
     if (check_test_result) {
         printf("%d тест пройден\n", test_data->number_of_test);
     }
@@ -30,7 +60,7 @@ void print_test_result(bool check_test_result, TEST_DATA *test_data, SE_SOLUTION
     }
 }
 
-void test_functions_runner(const int quantity_of_tests, TEST_DATA test_data_array[]) {
+void test_functions_runner() {
     SE_SOLUTIONS solutions_test{
         NAN, NAN,
         ERROR_NUMBER

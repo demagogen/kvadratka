@@ -6,6 +6,13 @@
 #include "enter_print.h"
 #include "utils.h"
 
+int asking_choice() {
+    int choice = 0;
+    printf("Выберите действие\nРешение квадратного уравнения (введите 1)\nЗапустить тест программы (введите 2)\n");
+    scanf("%d", &choice);
+    return choice;
+}
+
 void enter_se_parameters(double *a, double *b, double *c) {
     assert(a != NULL);
     assert(b != NULL);

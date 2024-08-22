@@ -13,7 +13,7 @@ struct SE_SOLUTIONS{
     NUMBER_OF_SOLUTIONS num_of_sol;
 };
 
-void linear_equation(double b, double c, SE_SOLUTIONS *solutions);
-void quadratic_equation(double a, double b, double c, SE_SOLUTIONS *solutions);
+void linear_equation      (double b, double c, SE_SOLUTIONS *solutions);
+void quadratic_equation   (double a, double b, double c, SE_SOLUTIONS *solutions);
 void solve_square_equation(double a, double b, double c, SE_SOLUTIONS *solutions);
 #endif

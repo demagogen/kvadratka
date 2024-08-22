@@ -10,7 +10,7 @@ struct TEST_DATA {
     NUMBER_OF_SOLUTIONS num_of_sol_ex;
 };
 
-bool check_test_result(TEST_DATA *test_data);
-void print_test_result(bool check_test_result, const TEST_DATA *test_data, SE_SOLUTIONS *solutions_test);
+bool check_test_result    (TEST_DATA *test_data);
+void print_test_result    (bool check_test_result, const TEST_DATA *test_data, SE_SOLUTIONS *solutions_test);
 void test_functions_runner();
 #endif

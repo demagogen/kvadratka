@@ -1,40 +1,50 @@
 #include <stdio.h>
 #include <assert.h>
 #include <math.h>
+#include <stdarg.h>
 
 #include "solve_square_equation.h"
 #include "enter_print.h"
 #include "utils.h"
+#include "color_scheme_changing.h"
 
-int asking_choice() {
+// red \033[1;31m
+// green \033[1;32m
+// "\033[1;31mbold red text\033[0m\n"
+
+int programm_options_input() {
     int choice = 0;
-    printf("Выберите действие\nРешение квадратного уравнения (введите 1)\nЗапустить тест программы (введите 2)\n");
-    scanf("%d", &choice); // TODO input error handling
+
+    graphic_printf("Выберите действие"
+           "\n\tРешение квадратного уравнения (введите 1)"
+           "\n\tЗапустить тест программы      (введите 2)\n", BLACK, BOLD);
+    scanf("100%d[^\n]", &choice); // TODO input error handling
     return choice;
 }
 
 void enter_se_parameters(double *a, double *b, double *c) {
-    assert(a != NULL);
-    assert(b != NULL);
-    assert(c != NULL);
+    assert(a);
+    assert(b);
+    assert(c);
 
-    printf("Введите значения трех коэффициентов через пробел\n");
+    graphic_printf("\033[1;30mВведите значения трех коэффициентов через пробел\n", BLACK, BOLD);
 
     for (int tryCounter = 0; tryCounter < 3; tryCounter++) { // TODO come up with a name for '3'
         int scanfResult = scanf("%lf %lf %lf", a, b, c);
 
         if (!is_parameters_valid(*a, *b, *c)) {
-            printf("Невозможные значения\n");
+            graphic_printf("\033[1;31mНевозможные значения\n", RED, BOLD);
         }
 
         if (scanfResult == 3) {
             break;
         }
         else if (tryCounter == 2) {
-            printf("Ошибка\nКонец программы\n");
+            graphic_printf("Ошибка\n", RED, BOLD);
+            graphic_printf("Конец программы\n", BLACK, BOLD);
         }
         else {
-            printf("Ошибка, введите снова\n");
+            graphic_printf("Ошибка, введите снова\n", RED, BOLD);
         }
 
         clear_buffer();
@@ -46,22 +56,22 @@ void print_solutions(const SE_SOLUTIONS *solutions) {
 
     switch(solutions->num_of_sol) {
         case ERROR_NUMBER:
-            printf("Ошибка решения\n");
+            graphic_printf("Ошибка решения\n", RED, BOLD);
             break;
         case NO_SOLUTIONS:
-            printf("Нет решений\n");
+            graphic_printf("Нет решений\n", BLACK, BOLD);
             break;
         case ONE_SOLUTION:
-            printf("Одно решение: %lf\n", solutions->x1);
+            graphic_printf("Одно решение: %lf\n", BLACK, BOLD, solutions->x1);
             break;
         case TWO_SOLUTIONS:
-            printf("Два решения: %lf %lf\n", solutions->x1, solutions->x2);
+            graphic_printf("Два решения: %lf %lf\n", BLACK, BOLD, solutions->x1, solutions->x2);
             break;
         case INF_NUMBER_OF_SOLUTIONS:
-            printf("Бесконечное количество решений\n");
+            graphic_printf("Бесконечное количество решений\n", BLACK, BOLD);
             break;
         default:
-            printf("Ошибка\n");
+            graphic_printf("Ошибка\n", RED, BOLD);
             break;
     }
 }

@@ -6,7 +6,7 @@
 #include "tests.h"
 
 void linear_equation(double b, double c, SE_SOLUTIONS *solutions){
-    assert(solutions != NULL);
+    assert(solutions);
 
     if (comparing_function(EPS, b) == MORE && comparing_function(b, -EPS) == MORE) {
         if (comparing_function(EPS, c) == MORE && comparing_function(c, -EPS) == MORE) {

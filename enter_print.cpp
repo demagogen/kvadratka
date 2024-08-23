@@ -8,17 +8,13 @@
 #include "utils.h"
 #include "color_scheme_changing.h"
 
-// red \033[1;31m
-// green \033[1;32m
-// "\033[1;31mbold red text\033[0m\n"
-
 int programm_options_input() {
     int choice = 0;
 
     graphic_printf("Выберите действие"
            "\n\tРешение квадратного уравнения (введите 1)"
            "\n\tЗапустить тест программы      (введите 2)\n", BLACK, BOLD);
-    scanf("%1d", &choice); // TODO input error handling
+    scanf("%1d", &choice);
     return choice;
 }
 
@@ -27,13 +23,13 @@ void enter_se_parameters(double *a, double *b, double *c) {
     assert(b);
     assert(c);
 
-    graphic_printf("\033[1;30mВведите значения трех коэффициентов через пробел\n", BLACK, BOLD);
+    graphic_printf("Введите значения трех коэффициентов через пробел\n", BLACK, BOLD);
 
     for (int tryCounter = 0; tryCounter < 3; tryCounter++) { // TODO come up with a name for '3'
         int scanfResult = scanf("%lf %lf %lf", a, b, c);
 
         if (!is_parameters_valid(*a, *b, *c)) {
-            graphic_printf("\033[1;31mНевозможные значения\n", RED, BOLD);
+            graphic_printf("Невозможные значения\n", RED, BOLD);
         }
 
         if (scanfResult == 3) {

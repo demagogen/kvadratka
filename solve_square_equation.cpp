@@ -36,9 +36,12 @@ void quadratic_equation(double a, double b, double c, SE_SOLUTIONS *solutions){
     }
     else if (comparing_function(EPS, discriminant) == MORE && comparing_function(discriminant, -EPS) == MORE){
         solutions->x1 = summand1;
+        solutions->x2 = NAN;
         solutions->num_of_sol = ONE_SOLUTION;
     }
     else {
+        solutions->x1 = NAN;
+        solutions->x2 = NAN;
         solutions->num_of_sol = NO_SOLUTIONS;
     }
 }

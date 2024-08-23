@@ -1,9 +1,12 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include <assert.h>
 
 #include "color_scheme_changing.h"
 
 void graphic_printf(const char *st, COLOR color, STYLE style, ...) {
+    assert(st);
+
     va_list argument_pointer;
     char *pointer;
 
@@ -27,6 +30,23 @@ void change_color(COLOR color, STYLE style) {
         case BOLD:
             printf("1;");
             break;
+        case UNDERLINE:
+            printf("4;");
+            break;
+        case INVERSE:
+            printf("7;");
+            break;
+        case BOLD_OFF:
+            printf("21;");
+            break;
+        case UNDERLINE_OFF:
+            printf("24;");
+            break;
+        case INVERSE_OFF:
+            printf("27;");
+            break;
+        default:
+            break;
     }
 
     switch(color) {
@@ -38,6 +58,23 @@ void change_color(COLOR color, STYLE style) {
             break;
         case GREEN:
             printf("32m");
+            break;
+        case YELLOW:
+            printf("33m");
+            break;
+        case BLUE:
+            printf("34m");
+            break;
+        case MAGENTA:
+            printf("35m");
+            break;
+        case CYAN:
+            printf("36m");
+            break;
+        case WHITE:
+            printf("37m");
+            break;
+        default:
             break;
     }
 }

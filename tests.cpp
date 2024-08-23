@@ -87,7 +87,7 @@ static const TEST_DATA test_data_array[] {
         .x1_ex = 1.0,
         .x2_ex = NAN,
         .num_of_sol_ex = ONE_SOLUTION,
-    },
+    }
 
 };
 
@@ -98,6 +98,8 @@ bool check_test_result(const TEST_DATA *test_data, SE_SOLUTIONS *solutions_test)
 
     if (comparing_function(solutions_test->x1, test_data->x1_ex) == EQUAL &&
         comparing_function(solutions_test->x2, test_data->x2_ex) == EQUAL &&
+        comparing_function(isnan(solutions_test->x1), isnan(test_data->x1_ex)) == EQUAL &&
+        comparing_function(isnan(solutions_test->x2), isnan(test_data->x2_ex)) == EQUAL &&
         comparing_function(solutions_test->num_of_sol, test_data->num_of_sol_ex) == EQUAL) {
         return true;
     }
@@ -107,15 +109,15 @@ bool check_test_result(const TEST_DATA *test_data, SE_SOLUTIONS *solutions_test)
 }
 
 void print_test_result(bool check_test_result, const TEST_DATA *test_data, SE_SOLUTIONS *solutions_test) {
-    printf("\033[1;30mСтарт теста %d\n", test_data->number_of_test);
+    graphic_printf("Старт теста %d\n", BLACK, BOLD,test_data->number_of_test);
     if (check_test_result) {
-        printf("\033[1;32mтест %d пройден\n", test_data->number_of_test);
+        graphic_printf("тест %d пройден\n", GREEN, BOLD, test_data->number_of_test);
     }
     else {
-        printf("\033[1;31mОшибка в тесте %d\na = %lf, b = %lf, c = %lf, num_of_sol = %d, x1 = %lf, x2 = %lf\n num_of_sol = "
-               "%d, x1 = %lf, x2 = %lf\n", test_data->number_of_test, test_data->a, test_data->b, test_data->c,
-               test_data->num_of_sol_ex, test_data->x1_ex, test_data->x2_ex, solutions_test->num_of_sol,
-               solutions_test->x1, solutions_test->x2);
+        graphic_printf("Ошибка в тесте %d\na = %lf, b = %lf, c = %lf, num_of_sol = %d, x1 = %lf, x2 = %lf\n"
+                       "num_of_sol = %d, x1 = %lf, x2 = %lf\n", RED, BOLD, test_data->number_of_test,
+                       test_data->a, test_data->b, test_data->c, test_data->num_of_sol_ex, test_data->x1_ex,
+                       test_data->x2_ex, solutions_test->num_of_sol, solutions_test->x1, solutions_test->x2);
     }
 }
 

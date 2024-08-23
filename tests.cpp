@@ -1,5 +1,5 @@
 #include <math.h>
-#include <stdio.h>
+#include <stdio.h> // TODO unused header
 #include <assert.h>
 
 #include "utils.h"
@@ -119,14 +119,15 @@ static const int quantity_of_tests = sizeof(test_data_array) / sizeof(test_data_
 
 bool check_test_result(const TEST_DATA *test_data, SE_SOLUTIONS *solutions_test) {
     assert(solutions_test);
+    // TODO assert(test_data)?
 
     solve_square_equation(test_data->a, test_data->b, test_data->c, solutions_test);
 
     if (comparing_function(solutions_test->x1, test_data->x1_ex) == EQUAL &&
         comparing_function(solutions_test->x2, test_data->x2_ex) == EQUAL &&
-        comparing_function(isnan(solutions_test->x1), isnan(test_data->x1_ex)) == EQUAL &&
-        comparing_function(isnan(solutions_test->x2), isnan(test_data->x2_ex)) == EQUAL &&
-        comparing_function(solutions_test->num_of_sol, test_data->num_of_sol_ex) == EQUAL) {
+        comparing_function(isnan(solutions_test->x1), isnan(test_data->x1_ex)) == EQUAL && // TODO use ==
+        comparing_function(isnan(solutions_test->x2), isnan(test_data->x2_ex)) == EQUAL && // TODO isinf
+        comparing_function(solutions_test->num_of_sol, test_data->num_of_sol_ex) == EQUAL) { // TODO use ==
         return true;
     }
     else {
@@ -140,7 +141,7 @@ void print_test_result(bool check_test_result, const TEST_DATA *test_data, SE_SO
 
     graphic_printf("Старт теста %d\n", BLACK, BOLD,test_data->number_of_test);
     if (check_test_result) {
-        graphic_printf("тест %d пройден\n", GREEN, BOLD, test_data->number_of_test);
+        graphic_printf("тест %d пройден\n", GREEN, BOLD, test_data->number_of_test); // TODO graphic_printf(color, style, fmt, ...)
     }
     else {
         graphic_printf("Ошибка в тесте %d\na = %lf, b = %lf, c = %lf, num_of_sol = %s, x1 = %lf, x2 = %lf\n"

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
-#include <math.h>
-#include <stdarg.h>
+#include <math.h> // TODO unused header
+#include <stdarg.h> // TODO unused header
 
 #include "solve_square_equation.h"
 #include "enter_print.h"

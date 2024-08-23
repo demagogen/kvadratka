@@ -12,11 +12,11 @@ int programm_options_input();
 /// @param a первый коэффициент
 /// @param b второй коэффициент
 /// @param c третий коэффициент
-void enter_se_parameters  (double *a, double *b, double *c);
+void enter_se_parameters  (double *a, double *b, double *c); // TODO whitespaces
 
 /// @brief Выводит ответы решения квадратного уравнения
 /// @details Выводит в поток вывода ответы решения квадратного уравнения
 ///          в виде структуры.
 /// @param solutions структура с данными о решении квадратного уравнения
-void print_solutions      (const SE_SOLUTIONS *solutions);
+void print_solutions      (const SE_SOLUTIONS *solutions); // TODO add include this
 #endif

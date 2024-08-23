@@ -45,7 +45,7 @@ static const TEST_DATA test_data_array[] {
         .a = 0,
         .b = 0,
         .c = 1,
-        .x1_ex = NAN, //TODO ISNAN and ISFINITE correct checker
+        .x1_ex = NAN,
         .x2_ex = NAN,
         .num_of_sol_ex = NO_SOLUTIONS,
     },
@@ -157,9 +157,9 @@ void test_functions_runner() {
         ERROR_NUMBER
     };
 
-    for (int test_index = 0; test_index < quantity_of_tests; test_index++) { // TODO print message when test is starting
+    for (int test_index = 0; test_index < quantity_of_tests; test_index++) {
         print_test_result(check_test_result(&test_data_array[test_index], &solutions_test),
                           &test_data_array[test_index],
-                          &solutions_test); // TODO make mini library to print color output
+                          &solutions_test);
     }
 }

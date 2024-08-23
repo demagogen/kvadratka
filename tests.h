@@ -7,7 +7,7 @@
 /// @brief Хранит тестовые данные
 /// @details Хранит тестовые данные для проверки функции решения квадратных
 ///          уравнений.
-struct TEST_DATA {
+struct TEST_DATA { // TODO default values
     int number_of_test;                ///<количество тестов
     double a, b, c;                    ///<правильные коэффициенты
     double x1_ex, x2_ex;               ///<правильные корни
@@ -26,7 +26,7 @@ const char* number_of_solutions_enum(NUMBER_OF_SOLUTIONS num_of_sol);
 /// @param test_data структура с правильными тестовыми данными
 /// @return true -- если тест прошел успешно,
 ///         false -- если была обнаружена ошибка
-bool check_test_result    (TEST_DATA *test_data);
+bool check_test_result    (TEST_DATA *test_data); // TODO alignment
 
 /// @brief Выводит результат теста
 /// @details Выводит результат теста функции решения квадратного уравнения

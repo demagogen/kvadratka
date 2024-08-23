@@ -1,8 +1,8 @@
 // kvadratka.cpp -- программа для решения квадратных уравнений
 #include <math.h>
-#include <stdio.h>
+#include <stdio.h> // TODO unused header
 
-#include "utils.h"
+#include "utils.h" // TODO unused header
 #include "solve_square_equation.h"
 #include "enter_print.h"
 #include "tests.h"

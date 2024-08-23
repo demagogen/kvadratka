@@ -5,7 +5,7 @@
 /// @details Перечислимый тип данных о решениях уравнения,
 ///          содержащий информацию о количестве корней.
 enum NUMBER_OF_SOLUTIONS {
-    ERROR_NUMBER            = 0,
+    ERROR_NUMBER            = 0, // TODO docs?
     NO_SOLUTIONS            = 1,
     ONE_SOLUTION            = 2,
     TWO_SOLUTIONS           = 3,
@@ -17,7 +17,7 @@ enum NUMBER_OF_SOLUTIONS {
 ///          в которую сохраняется информация о решении
 ///          квадратного уравнения.
 struct SE_SOLUTIONS{
-    double x1, x2;
+    double x1, x2; // TODO defaut values
     NUMBER_OF_SOLUTIONS num_of_sol;
 };
 
@@ -27,7 +27,7 @@ struct SE_SOLUTIONS{
 /// @param b второй коэффициент
 /// @param c третий коэффициент
 /// @param solutions структура с данными о решении уравнения
-void linear_equation      (double b, double c, SE_SOLUTIONS *solutions);
+void linear_equation      (double b, double c, SE_SOLUTIONS *solutions); // TODO align
 
 /// @brief Решает квадратное уравнение (общий случай)
 /// @details Решает квадратное уравнение (общий случай) и сохраняет

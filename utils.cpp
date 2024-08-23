@@ -1,6 +1,6 @@
 #include <math.h>
 #include <stdio.h>
-#include <assert.h>
+#include <assert.h> // TODO unused header
 
 #include "utils.h"
 

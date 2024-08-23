@@ -1,10 +1,34 @@
 #include <math.h>
 #include <stdio.h>
+#include <assert.h>
 
 #include "utils.h"
 #include "solve_square_equation.h"
 #include "tests.h"
 #include "color_scheme_changing.h"
+
+const char* number_of_solutions_enum(NUMBER_OF_SOLUTIONS num_of_sol){
+    switch(num_of_sol) {
+        case ERROR_NUMBER:
+            return "ERROR_NUMBER";
+            break;
+        case NO_SOLUTIONS:
+            return "NO_SOLUTIONS";
+            break;
+        case ONE_SOLUTION:
+            return "ONE_SOLUTION";
+            break;
+        case TWO_SOLUTIONS:
+            return "TWO_SOLUTIONS";
+            break;
+        case INF_NUMBER_OF_SOLUTIONS:
+            return "INF_NUMBER_OF_SOLUTIONS";
+            break;
+        default:
+            return "ERROR_VALUE";
+            break;
+    }
+}
 
 static const TEST_DATA test_data_array[] {
     {
@@ -94,6 +118,8 @@ static const TEST_DATA test_data_array[] {
 static const int quantity_of_tests = sizeof(test_data_array) / sizeof(test_data_array[0]);
 
 bool check_test_result(const TEST_DATA *test_data, SE_SOLUTIONS *solutions_test) {
+    assert(solutions_test);
+
     solve_square_equation(test_data->a, test_data->b, test_data->c, solutions_test);
 
     if (comparing_function(solutions_test->x1, test_data->x1_ex) == EQUAL &&
@@ -109,15 +135,18 @@ bool check_test_result(const TEST_DATA *test_data, SE_SOLUTIONS *solutions_test)
 }
 
 void print_test_result(bool check_test_result, const TEST_DATA *test_data, SE_SOLUTIONS *solutions_test) {
+    assert(test_data);
+    assert(solutions_test);
+
     graphic_printf("Старт теста %d\n", BLACK, BOLD,test_data->number_of_test);
     if (check_test_result) {
         graphic_printf("тест %d пройден\n", GREEN, BOLD, test_data->number_of_test);
     }
     else {
-        graphic_printf("Ошибка в тесте %d\na = %lf, b = %lf, c = %lf, num_of_sol = %d, x1 = %lf, x2 = %lf\n"
-                       "num_of_sol = %d, x1 = %lf, x2 = %lf\n", RED, BOLD, test_data->number_of_test,
-                       test_data->a, test_data->b, test_data->c, test_data->num_of_sol_ex, test_data->x1_ex,
-                       test_data->x2_ex, solutions_test->num_of_sol, solutions_test->x1, solutions_test->x2);
+        graphic_printf("Ошибка в тесте %d\na = %lf, b = %lf, c = %lf, num_of_sol = %s, x1 = %lf, x2 = %lf\n"
+                       "num_of_sol = %s, x1 = %lf, x2 = %lf\n", RED, BOLD, test_data->number_of_test,
+                       test_data->a, test_data->b, test_data->c, number_of_solutions_enum(test_data->num_of_sol_ex), test_data->x1_ex,
+                       test_data->x2_ex, number_of_solutions_enum(solutions_test->num_of_sol), solutions_test->x1, solutions_test->x2);
     }
 }
 

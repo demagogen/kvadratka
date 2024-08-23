@@ -1,2 +1,5 @@
 *.save
 *.exe
+build
+doxyfile
+html

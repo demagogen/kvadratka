@@ -1,0 +1,181 @@
+\doxysection{color\+\_\+scheme\+\_\+changing.\+h File Reference}
+\label{color__scheme__changing_8h}\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ COLOR} \{ \newline
+\textbf{ BLACK} = 0
+, \textbf{ RED} = 1
+, \textbf{ GREEN} = 2
+, \textbf{ YELLOW} = 3
+, \newline
+\textbf{ BLUE} = 4
+, \textbf{ MAGENTA} = 5
+, \textbf{ CYAN} = 6
+, \textbf{ WHITE} = 7
+ \}
+\begin{DoxyCompactList}\small\item\em Перечислимый тип цветов \end{DoxyCompactList}\item 
+enum \textbf{ STYLE} \{ \newline
+\textbf{ RESET} = 0
+, \textbf{ BOLD} = 1
+, \textbf{ UNDERLINE} = 2
+, \textbf{ INVERSE} = 3
+, \newline
+\textbf{ BOLD\+\_\+\+OFF} = 4
+, \textbf{ UNDERLINE\+\_\+\+OFF} = 5
+, \textbf{ INVERSE\+\_\+\+OFF} = 6
+ \}
+\begin{DoxyCompactList}\small\item\em Перечислимый тип стилей \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ change\+\_\+color} (\textbf{ COLOR} color, \textbf{ STYLE} style)
+\begin{DoxyCompactList}\small\item\em Меняет цвет и стиль выводящей строки \end{DoxyCompactList}\item 
+void \textbf{ graphic\+\_\+printf} (const char $\ast$st, \textbf{ COLOR} color, \textbf{ STYLE} style,...)
+\begin{DoxyCompactList}\small\item\em Выводит строку с цветом и стилем \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!COLOR@{COLOR}}
+\index{COLOR@{COLOR}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}
+\doxysubsubsection{COLOR}
+{\footnotesize\ttfamily \label{color__scheme__changing_8h_af90824509586333cf45ce757d2711ce3} 
+enum \textbf{ COLOR}}
+
+
+
+Перечислимый тип цветов 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLACK@{BLACK}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!BLACK@{BLACK}}}\label{color__scheme__changing_8h_af90824509586333cf45ce757d2711ce3} 
+BLACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RED@{RED}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!RED@{RED}}}\label{color__scheme__changing_8h_af90824509586333cf45ce757d2711ce3} 
+RED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GREEN@{GREEN}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!GREEN@{GREEN}}}\label{color__scheme__changing_8h_af90824509586333cf45ce757d2711ce3} 
+GREEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YELLOW@{YELLOW}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!YELLOW@{YELLOW}}}\label{color__scheme__changing_8h_af90824509586333cf45ce757d2711ce3} 
+YELLOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLUE@{BLUE}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!BLUE@{BLUE}}}\label{color__scheme__changing_8h_af90824509586333cf45ce757d2711ce3} 
+BLUE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAGENTA@{MAGENTA}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!MAGENTA@{MAGENTA}}}\label{color__scheme__changing_8h_af90824509586333cf45ce757d2711ce3} 
+MAGENTA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CYAN@{CYAN}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!CYAN@{CYAN}}}\label{color__scheme__changing_8h_af90824509586333cf45ce757d2711ce3} 
+CYAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WHITE@{WHITE}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!WHITE@{WHITE}}}\label{color__scheme__changing_8h_af90824509586333cf45ce757d2711ce3} 
+WHITE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \textbf{ 5} of file \textbf{ color\+\_\+scheme\+\_\+changing.\+h}.
+
+\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!STYLE@{STYLE}}
+\index{STYLE@{STYLE}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}
+\doxysubsubsection{STYLE}
+{\footnotesize\ttfamily \label{color__scheme__changing_8h_abeb6630113c9cbf149ab26aae3458fc6} 
+enum \textbf{ STYLE}}
+
+
+
+Перечислимый тип стилей 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RESET@{RESET}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!RESET@{RESET}}}\label{color__scheme__changing_8h_abeb6630113c9cbf149ab26aae3458fc6} 
+RESET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BOLD@{BOLD}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!BOLD@{BOLD}}}\label{color__scheme__changing_8h_abeb6630113c9cbf149ab26aae3458fc6} 
+BOLD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNDERLINE@{UNDERLINE}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!UNDERLINE@{UNDERLINE}}}\label{color__scheme__changing_8h_abeb6630113c9cbf149ab26aae3458fc6} 
+UNDERLINE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVERSE@{INVERSE}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!INVERSE@{INVERSE}}}\label{color__scheme__changing_8h_abeb6630113c9cbf149ab26aae3458fc6} 
+INVERSE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BOLD\_OFF@{BOLD\_OFF}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!BOLD\_OFF@{BOLD\_OFF}}}\label{color__scheme__changing_8h_abeb6630113c9cbf149ab26aae3458fc6} 
+BOLD\+\_\+\+OFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNDERLINE\_OFF@{UNDERLINE\_OFF}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!UNDERLINE\_OFF@{UNDERLINE\_OFF}}}\label{color__scheme__changing_8h_abeb6630113c9cbf149ab26aae3458fc6} 
+UNDERLINE\+\_\+\+OFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVERSE\_OFF@{INVERSE\_OFF}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!INVERSE\_OFF@{INVERSE\_OFF}}}\label{color__scheme__changing_8h_abeb6630113c9cbf149ab26aae3458fc6} 
+INVERSE\+\_\+\+OFF&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \textbf{ 17} of file \textbf{ color\+\_\+scheme\+\_\+changing.\+h}.
+
+
+
+\doxysubsection{Function Documentation}
+\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!change\_color@{change\_color}}
+\index{change\_color@{change\_color}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}
+\doxysubsubsection{change\_color()}
+{\footnotesize\ttfamily \label{color__scheme__changing_8h_a4cb49899bd05799aa0794243197b0cae} 
+void change\+\_\+color (\begin{DoxyParamCaption}\item[{\textbf{ COLOR}}]{color}{, }\item[{\textbf{ STYLE}}]{style}{}\end{DoxyParamCaption})}
+
+
+
+Меняет цвет и стиль выводящей строки 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & цвет \\
+\hline
+{\em style} & стиль \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 23} of file \textbf{ color\+\_\+scheme\+\_\+changing.\+cpp}.
+
+\index{color\_scheme\_changing.h@{color\_scheme\_changing.h}!graphic\_printf@{graphic\_printf}}
+\index{graphic\_printf@{graphic\_printf}!color\_scheme\_changing.h@{color\_scheme\_changing.h}}
+\doxysubsubsection{graphic\_printf()}
+{\footnotesize\ttfamily \label{color__scheme__changing_8h_aea63f59c010547b640bd7619481176bc} 
+void graphic\+\_\+printf (\begin{DoxyParamCaption}\item[{const char $\ast$}]{st}{, }\item[{\textbf{ COLOR}}]{color}{, }\item[{\textbf{ STYLE}}]{style}{, }\item[{}]{...}{}\end{DoxyParamCaption})}
+
+
+
+Выводит строку с цветом и стилем 
+
+
+\begin{DoxyParams}{Parameters}
+{\em st} & строка \\
+\hline
+{\em color} & цвет \\
+\hline
+{\em style} & стиль \\
+\hline
+{\em Строка} & с цветом color и стилем style \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 7} of file \textbf{ color\+\_\+scheme\+\_\+changing.\+cpp}.
+

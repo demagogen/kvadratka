@@ -1,0 +1,64 @@
+\doxysection{color\+\_\+scheme\+\_\+changing.\+cpp File Reference}
+\label{color__scheme__changing_8cpp}\index{color\_scheme\_changing.cpp@{color\_scheme\_changing.cpp}}
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include "{}color\+\_\+scheme\+\_\+changing.\+h"{}}\newline
+Include dependency graph for color\+\_\+scheme\+\_\+changing.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ graphic\+\_\+printf} (const char $\ast$st, \textbf{ COLOR} color, \textbf{ STYLE} style,...)
+\begin{DoxyCompactList}\small\item\em Выводит строку с цветом и стилем \end{DoxyCompactList}\item 
+void \textbf{ change\+\_\+color} (\textbf{ COLOR} color, \textbf{ STYLE} style)
+\begin{DoxyCompactList}\small\item\em Меняет цвет и стиль выводящей строки \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\index{color\_scheme\_changing.cpp@{color\_scheme\_changing.cpp}!change\_color@{change\_color}}
+\index{change\_color@{change\_color}!color\_scheme\_changing.cpp@{color\_scheme\_changing.cpp}}
+\doxysubsubsection{change\_color()}
+{\footnotesize\ttfamily \label{color__scheme__changing_8cpp_a4cb49899bd05799aa0794243197b0cae} 
+void change\+\_\+color (\begin{DoxyParamCaption}\item[{\textbf{ COLOR}}]{color}{, }\item[{\textbf{ STYLE}}]{style}{}\end{DoxyParamCaption})}
+
+
+
+Меняет цвет и стиль выводящей строки 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & цвет \\
+\hline
+{\em style} & стиль \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 23} of file \textbf{ color\+\_\+scheme\+\_\+changing.\+cpp}.
+
+\index{color\_scheme\_changing.cpp@{color\_scheme\_changing.cpp}!graphic\_printf@{graphic\_printf}}
+\index{graphic\_printf@{graphic\_printf}!color\_scheme\_changing.cpp@{color\_scheme\_changing.cpp}}
+\doxysubsubsection{graphic\_printf()}
+{\footnotesize\ttfamily \label{color__scheme__changing_8cpp_aea63f59c010547b640bd7619481176bc} 
+void graphic\+\_\+printf (\begin{DoxyParamCaption}\item[{const char $\ast$}]{st}{, }\item[{\textbf{ COLOR}}]{color}{, }\item[{\textbf{ STYLE}}]{style}{, }\item[{}]{...}{}\end{DoxyParamCaption})}
+
+
+
+Выводит строку с цветом и стилем 
+
+
+\begin{DoxyParams}{Parameters}
+{\em st} & строка \\
+\hline
+{\em color} & цвет \\
+\hline
+{\em style} & стиль \\
+\hline
+{\em Строка} & с цветом color и стилем style \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 7} of file \textbf{ color\+\_\+scheme\+\_\+changing.\+cpp}.
+

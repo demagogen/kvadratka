@@ -8,9 +8,19 @@ enum COMPARE_RESULT{
     EQUAL = 0,
 };
 
-bool var_is_bigger_than_zero     (double  var);
-bool is_var_equal_to_zero        (double var);
+/// @brief Очищает буфер
 void clear_buffer                ();
+/// @brief Проверяет коэффициенты на допустимые значения
+/// @param a первый коэффициент
+/// @param b второй коэффициент
+/// @param c третий коэффициент
+/// @return true -- если все параметры имеют допустимые значения,
+///         false -- если хотя бы один из параметров не имеет допустимого значения
 bool is_parameters_valid         (double a, double b, double c);
+
+/// @brief Сравнивает числа
+/// @param var1 первое число
+/// @param var2 второе число
+/// @return Имя значения проверки типа COMPARE_RESULT
 COMPARE_RESULT comparing_function(double var1, double var2);
 #endif

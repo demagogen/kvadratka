@@ -48,6 +48,7 @@ void quadratic_equation(double a, double b, double c, SE_SOLUTIONS *solutions){
 
 void solve_square_equation(double a, double b, double c, SE_SOLUTIONS *solutions) {
     assert(solutions != NULL);
+
     if (comparing_function(EPS, a) == MORE && comparing_function(a, -EPS) == MORE){
         linear_equation(b, c, solutions);
     }

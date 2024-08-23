@@ -6,7 +6,7 @@
 #include "utils.h"
 #include "color_scheme_changing.h"
 
-int programm_options_input() {
+int program_options_input() {
     int choice = 0;
 
     graphic_printf(BLACK, BOLD, "Выберите действие"
@@ -23,24 +23,24 @@ void enter_se_parameters(double *a, double *b, double *c) {
     assert(b);
     assert(c);
 
-    graphic_printf(BLACK, BOLD, "Введите значения трех коэффициентов через пробел\n");
+    graphic_printf(BLACK, BOLD, "Введите значения трех коэффициентов через пробел!\n");
 
     for (int tryCounter = 0; tryCounter < max_tries; tryCounter++) {
         int scanfResult = scanf("%lf %lf %lf", a, b, c);
 
         if (!is_parameters_valid(*a, *b, *c)) {
-            graphic_printf(RED, BOLD, "Невозможные значения\n");
+            graphic_printf(RED, BOLD, "Кошмар! Невозможные значения!!!\n");
         }
 
         if (scanfResult == 3) {
             break;
         }
         else if (tryCounter == 2) {
-            graphic_printf(RED, BOLD, "Ошибка\n");
-            graphic_printf(BLACK, BOLD, "Конец программы\n");
+            graphic_printf(RED, BOLD, "ААААА!!! У Вас ОШИБКА!!!\n");
+            graphic_printf(BLACK, BOLD, "Конец программы!!! О нет!!! Тильт!!! Только не это!!!!!!!!!\n");
         }
         else {
-            graphic_printf(RED, BOLD, "Ошибка, введите снова\n");
+            graphic_printf(RED, BOLD, "Ошибка, введите снова. Да, я душнила.\n");
         }
 
         clear_buffer();
@@ -48,7 +48,7 @@ void enter_se_parameters(double *a, double *b, double *c) {
 }
 
 void print_solutions(const SE_SOLUTIONS *solutions) {
-    assert(solutions != NULL);
+    assert(solutions);
 
     switch(solutions->num_of_sol) {
         case ERROR_NUMBER:

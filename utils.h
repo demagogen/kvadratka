@@ -1,6 +1,5 @@
 #ifndef UTILS_H_
 #define UTILS_H_
-const double EPS = 1e-7;
 
 /// @brief Перечислимый тип сравнений
 /// @details Содержит имена для результатов сравнения двух чисел.
@@ -32,5 +31,7 @@ bool is_parameters_valid(double a, double b, double c);
 /// @param var1 первое число
 /// @param var2 второе число
 /// @return Имя значения проверки типа COMPARE_RESULT
+
 COMPARE_RESULT comparing_function(double var1, double var2);
+
 #endif

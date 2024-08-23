@@ -8,19 +8,19 @@
 
 int main() {
     double a = NAN, b = NAN, c = NAN;
-    int programm_option = 0;
+    int program_option = 0;
     SE_SOLUTIONS solutions {
         NAN, NAN,
         ERROR_NUMBER
     };
 
-    programm_option = programm_options_input();
-    if (programm_option == 1) {
+    program_option = program_options_input();
+    if (program_option == 1) {
         enter_se_parameters(&a, &b, &c);
         solve_square_equation(a, b, c, &solutions);
         print_solutions(&solutions);
     }
-    else if (programm_option == 2) {
+    else if (program_option == 2) {
         test_functions_runner();
     }
     else {

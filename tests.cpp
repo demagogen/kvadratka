@@ -126,6 +126,7 @@ bool check_test_result(const TEST_DATA *test_data, SE_SOLUTIONS *solutions_test)
         isnan(solutions_test->x2) == isnan(test_data->x2_ex) &&
         isfinite(solutions_test->x1) == isfinite(test_data->x1_ex) &&
         isfinite(solutions_test->x2) == isfinite(test_data->x2_ex)) {
+
         if (comparing_function(solutions_test->x1, test_data->x1_ex) == EQUAL &&
             comparing_function(solutions_test->x2, test_data->x2_ex) == EQUAL &&
             solutions_test->num_of_sol == test_data->num_of_sol_ex) {

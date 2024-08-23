@@ -89,3 +89,4 @@ xdg-open ./html/index.html
 cd ../
 rm -rf kvadratka
 ```
+

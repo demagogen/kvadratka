@@ -15,13 +15,13 @@ enum COLOR {
 
 /// @brief Перечислимый тип стилей
 enum STYLE {
-    RESET         = 0,
-    BOLD          = 1,
-    UNDERLINE     = 2,
-    INVERSE       = 3,
-    BOLD_OFF      = 4,
-    UNDERLINE_OFF = 5,
-    INVERSE_OFF   = 6,
+    RESET         = 0, ///<начальный текст
+    BOLD          = 1, ///<включить жирный шрифт
+    UNDERLINE     = 2, ///<подчеркнутый текст
+    INVERSE       = 3, ///<инверсия
+    BOLD_OFF      = 4, ///<выключить жирный шрифт
+    UNDERLINE_OFF = 5, ///<выключить подчеркивание
+    INVERSE_OFF   = 6, ///<выключить инверсию
 };
 
 /// @brief Меняет цвет и стиль выводящей строки

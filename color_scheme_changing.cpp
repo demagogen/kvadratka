@@ -4,13 +4,13 @@
 
 #include "color_scheme_changing.h"
 
-void graphic_printf(const char *st, COLOR color, STYLE style, ...) {
+void graphic_printf(COLOR color, STYLE style, const char *st, ...) {
     assert(st);
 
     va_list argument_pointer;
     char *pointer;
 
-    va_start(argument_pointer, style);
+    va_start(argument_pointer, st);
 
     change_color(color, style);
 

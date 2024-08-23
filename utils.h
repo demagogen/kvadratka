@@ -12,7 +12,7 @@ enum COMPARE_RESULT{
 
 /// @brief Очищает буфер
 /// @details Очищает буфер для прочтения данных, которые введет пользователь после первой попытки.
-void clear_buffer                (); // TODO what???
+void clear_buffer();
 
 /// @brief Проверяет коэффициенты на допустимые значения
 /// @details Проверяет являются ли коэффициенты числами типа double.
@@ -23,7 +23,7 @@ void clear_buffer                (); // TODO what???
 /// @param c третий коэффициент
 /// @return true -- если все параметры имеют допустимые значения,
 ///         false -- если хотя бы один из параметров не имеет допустимого значения
-bool is_parameters_valid         (double a, double b, double c);
+bool is_parameters_valid(double a, double b, double c);
 
 /// @brief Сравнивает числа
 /// @details Сравнивает два числа и выводит результат сравнения.

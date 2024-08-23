@@ -40,5 +40,5 @@ void change_color(COLOR color, STYLE style);
 /// @param color цвет
 /// @param style стиль
 /// @param  Строка с цветом color и стилем style
-void graphic_printf(const char *st, COLOR color, STYLE style, ...);
+void graphic_printf(COLOR color, STYLE style, const char *st, ...);
 #endif

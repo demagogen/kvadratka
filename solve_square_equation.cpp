@@ -3,7 +3,6 @@
 
 #include "utils.h"
 #include "solve_square_equation.h"
-#include "tests.h" // TODO unused header
 
 void linear_equation(double b, double c, SE_SOLUTIONS *solutions){
     assert(solutions);
@@ -17,7 +16,7 @@ void linear_equation(double b, double c, SE_SOLUTIONS *solutions){
         }
     }
     else {
-        solutions->x1 = -c/b;
+        solutions->x1 = -c / b;
         solutions->num_of_sol = ONE_SOLUTION;
     }
 }
@@ -26,10 +25,10 @@ void quadratic_equation(double a, double b, double c, SE_SOLUTIONS *solutions){
     assert(solutions != NULL);
 
     double discriminant = b*b - 4*a*c;
-    double summand1 = -b/(2*a); // TODO -b / (2*a) -- whitespaces
+    double summand1 = -b / (2*a);
 
     if (comparing_function(discriminant, EPS) == MORE || comparing_function(discriminant, EPS) == EQUAL) {
-        double summand2 = sqrt(discriminant)/(2*a);
+        double summand2 = sqrt(discriminant) / (2*a);
         solutions->x1 = summand1 + summand2;
         solutions->x2 = summand1 - summand2;
         solutions->num_of_sol = TWO_SOLUTIONS;
@@ -47,7 +46,7 @@ void quadratic_equation(double a, double b, double c, SE_SOLUTIONS *solutions){
 }
 
 void solve_square_equation(double a, double b, double c, SE_SOLUTIONS *solutions) {
-    assert(solutions != NULL); // TODO choose the way of writing asserts: assert(... != NULL) or just assert(...)
+    assert(solutions);
 
     if (comparing_function(EPS, a) == MORE && comparing_function(a, -EPS) == MORE){
         linear_equation(b, c, solutions);

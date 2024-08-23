@@ -1,5 +1,4 @@
 #include <math.h>
-#include <stdio.h> // TODO unused header
 #include <assert.h>
 
 #include "utils.h"
@@ -119,16 +118,22 @@ static const int quantity_of_tests = sizeof(test_data_array) / sizeof(test_data_
 
 bool check_test_result(const TEST_DATA *test_data, SE_SOLUTIONS *solutions_test) {
     assert(solutions_test);
-    // TODO assert(test_data)?
+    assert(test_data);
 
     solve_square_equation(test_data->a, test_data->b, test_data->c, solutions_test);
 
-    if (comparing_function(solutions_test->x1, test_data->x1_ex) == EQUAL &&
-        comparing_function(solutions_test->x2, test_data->x2_ex) == EQUAL &&
-        comparing_function(isnan(solutions_test->x1), isnan(test_data->x1_ex)) == EQUAL && // TODO use ==
-        comparing_function(isnan(solutions_test->x2), isnan(test_data->x2_ex)) == EQUAL && // TODO isinf
-        comparing_function(solutions_test->num_of_sol, test_data->num_of_sol_ex) == EQUAL) { // TODO use ==
-        return true;
+    if (isnan(solutions_test->x1) == isnan(test_data->x1_ex) &&
+        isnan(solutions_test->x2) == isnan(test_data->x2_ex) &&
+        isfinite(solutions_test->x1) == isfinite(test_data->x1_ex) &&
+        isfinite(solutions_test->x2) == isfinite(test_data->x2_ex)) {
+        if (comparing_function(solutions_test->x1, test_data->x1_ex) == EQUAL &&
+            comparing_function(solutions_test->x2, test_data->x2_ex) == EQUAL &&
+            solutions_test->num_of_sol == test_data->num_of_sol_ex) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     else {
         return false;
@@ -139,13 +144,13 @@ void print_test_result(bool check_test_result, const TEST_DATA *test_data, SE_SO
     assert(test_data);
     assert(solutions_test);
 
-    graphic_printf("Старт теста %d\n", BLACK, BOLD,test_data->number_of_test);
+    graphic_printf(BLACK, BOLD, "Старт теста %d\n", test_data->number_of_test);
     if (check_test_result) {
-        graphic_printf("тест %d пройден\n", GREEN, BOLD, test_data->number_of_test); // TODO graphic_printf(color, style, fmt, ...)
+        graphic_printf(GREEN, BOLD, "тест %d пройден\n", test_data->number_of_test);
     }
     else {
-        graphic_printf("Ошибка в тесте %d\na = %lf, b = %lf, c = %lf, num_of_sol = %s, x1 = %lf, x2 = %lf\n"
-                       "num_of_sol = %s, x1 = %lf, x2 = %lf\n", RED, BOLD, test_data->number_of_test,
+        graphic_printf(RED, BOLD, "Ошибка в тесте %d\na = %lf, b = %lf, c = %lf, num_of_sol = %s, x1 = %lf, x2 = %lf\n"
+                       "num_of_sol = %s, x1 = %lf, x2 = %lf\n", test_data->number_of_test,
                        test_data->a, test_data->b, test_data->c, number_of_solutions_enum(test_data->num_of_sol_ex), test_data->x1_ex,
                        test_data->x2_ex, number_of_solutions_enum(solutions_test->num_of_sol), solutions_test->x1, solutions_test->x2);
     }

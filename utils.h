@@ -9,6 +9,13 @@ enum COMPARE_RESULT{
     MORE  = 1,  ///<первое значение больше
 };
 
+enum ERROR_DATA{
+    PROGRAM_ERROR,
+    ENTER_ERROR,
+    VALIDATION_ERROR,
+};
+
+const char* error_data_enum(ERROR_DATA error_inf);
 /// @brief Очищает буфер
 /// @details Очищает буфер для прочтения данных, которые введет пользователь после первой попытки.
 void clear_buffer();

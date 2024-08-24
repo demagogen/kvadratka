@@ -145,13 +145,16 @@ void print_test_result(bool check_test_result, const TEST_DATA *test_data, SE_SO
     assert(test_data);
     assert(solutions_test);
 
+    ERROR_DATA error_inf = PROGRAM_ERROR;
+
     graphic_printf(BLACK, BOLD, "Старт теста %d\n", test_data->number_of_test);
     if (check_test_result) {
         graphic_printf(GREEN, BOLD, "тест %d пройден\n", test_data->number_of_test);
     }
     else {
-        graphic_printf(RED, BOLD, "Ошибка в тесте %d\na = %lf, b = %lf, c = %lf, num_of_sol = %s, x1 = %lf, x2 = %lf\n"
-                       "num_of_sol = %s, x1 = %lf, x2 = %lf\n", test_data->number_of_test,
+        error_inf = VALIDATION_ERROR;
+        graphic_printf(RED, BOLD, "%s\nОшибка в тесте %d\na = %lf, b = %lf, c = %lf, num_of_sol = %s, x1 = %lf, x2 = %lf\n"
+                       "num_of_sol = %s, x1 = %lf, x2 = %lf\n", error_data_enum(error_inf), test_data->number_of_test,
                        test_data->a, test_data->b, test_data->c, number_of_solutions_enum(test_data->num_of_sol_ex), test_data->x1_ex,
                        test_data->x2_ex, number_of_solutions_enum(solutions_test->num_of_sol), solutions_test->x1, solutions_test->x2);
     }

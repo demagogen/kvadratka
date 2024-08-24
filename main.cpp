@@ -5,10 +5,12 @@
 #include "enter_print.h"
 #include "tests.h"
 #include "color_scheme_changing.h"
+#include "utils.h"
 
 int main() {
     double a = NAN, b = NAN, c = NAN;
     int program_option = 0;
+    ERROR_DATA error_inf = PROGRAM_ERROR;
     SE_SOLUTIONS solutions {
         NAN, NAN,
         ERROR_NUMBER
@@ -24,7 +26,8 @@ int main() {
         test_functions_runner();
     }
     else {
-        graphic_printf(RED, BOLD, "Ошибочный ввод\n");
+        error_inf = ENTER_ERROR;
+        graphic_printf(RED, BOLD, "%s\nОшибочный ввод: %d\n", error_data_enum(error_inf), program_option);
     }
 
     return 0;

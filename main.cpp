@@ -16,21 +16,27 @@ int main(int argc, char *argv[]) {
         NAN, NAN,
         ERROR_NUMBER
     };
-
-    flag_input(argc, argv);
-
-    program_option = program_options_input();
-    if (program_option == 1) {
-        enter_se_parameters(&a, &b, &c);
-        solve_square_equation(a, b, c, &solutions);
-        print_solutions(&solutions);
+    if (argc == 2) {
+        flag_input(argc, argv);
     }
-    else if (program_option == 2) {
-        test_functions_runner();
+    else if (argc == 1) {
+        program_option = program_options_input();
+        if (program_option == 1) {
+            enter_se_parameters(&a, &b, &c);
+            solve_square_equation(a, b, c, &solutions);
+            print_solutions(&solutions);
+        }
+        else if (program_option == 2) {
+            test_functions_runner();
+        }
+        else {
+            error_inf = ENTER_ERROR;
+            graphic_printf(RED, BOLD, "%s\nОшибочный ввод: %d\n", error_data_enum(error_inf), program_option);
+        }
     }
     else {
-        error_inf = ENTER_ERROR;
-        graphic_printf(RED, BOLD, "%s\nОшибочный ввод: %d\n", error_data_enum(error_inf), program_option);
+        graphic_printf(RED, BOLD, "%s\n", error_data_enum(ENTER_ERROR));
+        graphic_printf(BLACK, BOLD, "Воспользуйтесь флагом \"-h\" или \"--help\"");
     }
 
     return 0;

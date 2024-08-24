@@ -27,21 +27,27 @@ void quadratic_equation(double a, double b, double c, SE_SOLUTIONS *solutions){
     double discriminant = b*b - 4*a*c;
     double summand1 = -b / (2*a);
 
-    if (comparing_function(discriminant, 0) == MORE) {
-        double summand2 = sqrt(discriminant) / (2*a);
-        solutions->x1 = summand1 + summand2;
-        solutions->x2 = summand1 - summand2;
-        solutions->num_of_sol = TWO_SOLUTIONS;
-    }
-    else if (comparing_function(discriminant, 0) == EQUAL){
-        solutions->x1 = summand1;
-        solutions->x2 = NAN;
-        solutions->num_of_sol = ONE_SOLUTION;
+    if (comparing_function(c, 0) == EQUAL) {
+        solutions->x1 = 0;
+        solutions->x2 = 2 * summand1;
     }
     else {
-        solutions->x1 = NAN;
-        solutions->x2 = NAN;
-        solutions->num_of_sol = NO_SOLUTIONS;
+        if (comparing_function(discriminant, 0) == MORE) {
+            double summand2 = sqrt(discriminant) / (2*a);
+            solutions->x1 = summand1 + summand2;
+            solutions->x2 = summand1 - summand2;
+            solutions->num_of_sol = TWO_SOLUTIONS;
+        }
+        else if (comparing_function(discriminant, 0) == EQUAL){
+            solutions->x1 = summand1;
+            solutions->x2 = NAN;
+            solutions->num_of_sol = ONE_SOLUTION;
+        }
+        else {
+            solutions->x1 = NAN;
+            solutions->x2 = NAN;
+            solutions->num_of_sol = NO_SOLUTIONS;
+        }
     }
 }
 

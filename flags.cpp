@@ -15,7 +15,7 @@ static int flags_array_counter = 0;
 
 static FLAG flags_array[flags_array_max_size] = {};
 
-bool register_flag(const char *flag_short, const char *flag_long, FlagCallback callback) {
+bool register_flag(const char *flag_short, const char *flag_long, FlagCallback callback, const char *description) {
     assert(flag_short);
     assert(flag_long);
     assert(callback);
@@ -23,9 +23,10 @@ bool register_flag(const char *flag_short, const char *flag_long, FlagCallback c
     if (flags_array_counter >= flags_array_max_size) {
         return false;
     }
-    *flags_array[flags_array_counter].flag_short = flag_short;
-    *flags_array[flags_array_counter].flag_long  = flag_long;
-     flags_array[flags_array_counter].callback   = callback;
+    flags_array[flags_array_counter].flag_short  = flag_short;
+    flags_array[flags_array_counter].flag_long   = flag_long;
+    flags_array[flags_array_counter].callback    = callback;
+    flags_array[flags_array_counter].description = description;
 
     flags_array_counter++;
 
@@ -39,8 +40,8 @@ void parse_flags(int argc, char *argv[]) {
 
         for (int check_flag_counter = 0; check_flag_counter < flags_array_counter; check_flag_counter++) {
 
-            if (strcmp(*flags_array[check_flag_counter].flag_short, argv[enter_flags_counter]) == 0 ||
-                strcmp(*flags_array[check_flag_counter].flag_long,  argv[enter_flags_counter]) == 0) {
+            if (strcmp(flags_array[check_flag_counter].flag_short, argv[enter_flags_counter]) == 0 ||
+                strcmp(flags_array[check_flag_counter].flag_long,  argv[enter_flags_counter]) == 0) {
 
                 flags_array[check_flag_counter].callback();
                 break;
@@ -52,30 +53,14 @@ void parse_flags(int argc, char *argv[]) {
     }
 }
 
-void help_flag(){
-    graphic_printf(BLACK, BOLD, "Использование: ./kvadratka [options]\n");
-    exit(0);
-}
+void print_help() {
+    int print_help_counter = -1;
 
-void test_flag(){
-    test_functions_runner();
-}
+    while (++print_help_counter < flags_array_counter) {
+        graphic_printf(BLACK, BOLD,"             %s %s %s\n", flags_array[print_help_counter].flag_short,
+                                                              flags_array[print_help_counter].flag_long,
+                                                              flags_array[print_help_counter].description);
+    }
 
-void version_flag() {
-    graphic_printf(BLACK, BOLD, "Версия 1.0.0 Poltorashka Edition");
-    //exit(0);
-}
 
-void solve_flag() {
-    double a = NAN, b = NAN, c = NAN;
-    ERROR_DATA error_inf = PROGRAM_ERROR;
-    SE_SOLUTIONS solutions {
-        NAN, NAN,
-        ERROR_NUMBER
-    };
-    enter_se_parameters(&a, &b, &c);
-    solve_square_equation(a, b, c, &solutions);
-    print_solutions(&solutions);
-
-    exit(0);
 }

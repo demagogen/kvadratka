@@ -1,0 +1,56 @@
+\doxysection{Файл color\+\_\+scheme\+\_\+changing.\+cpp}
+\label{color__scheme__changing_8cpp}\index{color\_scheme\_changing.cpp@{color\_scheme\_changing.cpp}}
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include "{}color\+\_\+scheme\+\_\+changing.\+h"{}}\newline
+Граф включаемых заголовочных файлов для color\+\_\+scheme\+\_\+changing.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ graphic\+\_\+printf} (\textbf{ COLOR} color, \textbf{ STYLE} style, const char $\ast$st,...)
+\begin{DoxyCompactList}\small\item\em Выводит строку с цветом и стилем \end{DoxyCompactList}\item 
+void \textbf{ change\+\_\+color} (\textbf{ COLOR} color, \textbf{ STYLE} style)
+\begin{DoxyCompactList}\small\item\em Меняет цвет и стиль вводимой строки \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\index{color\_scheme\_changing.cpp@{color\_scheme\_changing.cpp}!change\_color@{change\_color}}
+\index{change\_color@{change\_color}!color\_scheme\_changing.cpp@{color\_scheme\_changing.cpp}}
+\doxysubsubsection{change\_color()}
+{\footnotesize\ttfamily \label{color__scheme__changing_8cpp_a4cb49899bd05799aa0794243197b0cae} 
+void change\+\_\+color (\begin{DoxyParamCaption}\item[{\textbf{ COLOR}}]{color}{, }\item[{\textbf{ STYLE}}]{style}{}\end{DoxyParamCaption})}
+
+Меняет цвет и стиль вводимой строки из функции \doxyref{graphic\+\_\+printf()}{стр.}{color__scheme__changing_8h_a94c50ac376ebc10bd63a1b2e1b8967af}. 
+\begin{DoxyParams}{Аргументы}
+{\em color} & цвет \\
+\hline
+{\em style} & стиль \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \textbf{ color\+\_\+scheme\+\_\+changing.\+cpp} строка \textbf{ 23}
+
+\index{color\_scheme\_changing.cpp@{color\_scheme\_changing.cpp}!graphic\_printf@{graphic\_printf}}
+\index{graphic\_printf@{graphic\_printf}!color\_scheme\_changing.cpp@{color\_scheme\_changing.cpp}}
+\doxysubsubsection{graphic\_printf()}
+{\footnotesize\ttfamily \label{color__scheme__changing_8cpp_a94c50ac376ebc10bd63a1b2e1b8967af} 
+void graphic\+\_\+printf (\begin{DoxyParamCaption}\item[{\textbf{ COLOR}}]{color}{, }\item[{\textbf{ STYLE}}]{style}{, }\item[{const char $\ast$}]{st}{, }\item[{}]{...}{}\end{DoxyParamCaption})}
+
+Выводит строку с цветом color и стилей style в поток вывода. 
+\begin{DoxyParams}{Аргументы}
+{\em st} & строка \\
+\hline
+{\em color} & цвет \\
+\hline
+{\em style} & стиль \\
+\hline
+{\em Строка} & с цветом color и стилем style \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \textbf{ color\+\_\+scheme\+\_\+changing.\+cpp} строка \textbf{ 7}
+

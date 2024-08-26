@@ -1,0 +1,26 @@
+\doxysection{tests.\+h}
+\label{tests_8h_source}\textbf{ См. документацию.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TESTS\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TESTS\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}utils.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}solve\_square\_equation.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{struct\ }TEST\_DATA\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ number\_of\_test;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{double}\ a\ =\ 0,\ b\ =\ 0,\ c\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{double}\ x1\_ex\ =\ 0,\ x2\_ex\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00014\ \ \ \ \ NUMBER\_OF\_SOLUTIONS\ num\_of\_sol\_ex\ =\ ERROR\_NUMBER;\ }
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ number\_of\_solutions\_enum(NUMBER\_OF\_SOLUTIONS\ num\_of\_sol);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{bool}\ check\_test\_result(TEST\_DATA\ *test\_data);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ print\_test\_result(\textcolor{keywordtype}{bool}\ check\_test\_result,\ \textcolor{keyword}{const}\ TEST\_DATA\ *test\_data,\ SE\_SOLUTIONS\ *solutions\_test);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ test\_functions\_runner();}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

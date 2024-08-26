@@ -1,0 +1,69 @@
+\doxysection{Файл enter\+\_\+print.\+cpp}
+\label{enter__print_8cpp}\index{enter\_print.cpp@{enter\_print.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include "{}solve\+\_\+square\+\_\+equation.\+h"{}}\newline
+{\ttfamily \#include "{}enter\+\_\+print.\+h"{}}\newline
+{\ttfamily \#include "{}utils.\+h"{}}\newline
+{\ttfamily \#include "{}color\+\_\+scheme\+\_\+changing.\+h"{}}\newline
+Граф включаемых заголовочных файлов для enter\+\_\+print.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ program\+\_\+options\+\_\+input} ()
+\begin{DoxyCompactList}\small\item\em Сохраняет ответ пользователя на выбор действий \end{DoxyCompactList}\item 
+void \textbf{ enter\+\_\+se\+\_\+parameters} (double $\ast$a, double $\ast$b, double $\ast$c)
+\begin{DoxyCompactList}\small\item\em Сохраняет коэффициенты введенные пользователем \end{DoxyCompactList}\item 
+void \textbf{ print\+\_\+solutions} (const \textbf{ SE\+\_\+\+SOLUTIONS} $\ast$solutions)
+\begin{DoxyCompactList}\small\item\em Выводит ответы решения квадратного уравнения \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\index{enter\_print.cpp@{enter\_print.cpp}!enter\_se\_parameters@{enter\_se\_parameters}}
+\index{enter\_se\_parameters@{enter\_se\_parameters}!enter\_print.cpp@{enter\_print.cpp}}
+\doxysubsubsection{enter\_se\_parameters()}
+{\footnotesize\ttfamily \label{enter__print_8cpp_acf1069ffde1763e2baba21c2d657918e} 
+void enter\+\_\+se\+\_\+parameters (\begin{DoxyParamCaption}\item[{double $\ast$}]{a}{, }\item[{double $\ast$}]{b}{, }\item[{double $\ast$}]{c}{}\end{DoxyParamCaption})}
+
+Сохраняет коэффициенты, введенные пользователем, для решения квадратного уравнения. 
+\begin{DoxyParams}{Аргументы}
+{\em a} & первый коэффициент \\
+\hline
+{\em b} & второй коэффициент \\
+\hline
+{\em c} & третий коэффициент \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \textbf{ enter\+\_\+print.\+cpp} строка \textbf{ 19}
+
+\index{enter\_print.cpp@{enter\_print.cpp}!print\_solutions@{print\_solutions}}
+\index{print\_solutions@{print\_solutions}!enter\_print.cpp@{enter\_print.cpp}}
+\doxysubsubsection{print\_solutions()}
+{\footnotesize\ttfamily \label{enter__print_8cpp_a0455b24b80bf0fcb583f322390e277f3} 
+void print\+\_\+solutions (\begin{DoxyParamCaption}\item[{const \textbf{ SE\+\_\+\+SOLUTIONS} $\ast$}]{solutions}{}\end{DoxyParamCaption})}
+
+Выводит в поток вывода ответы решения квадратного уравнения в виде структуры. 
+\begin{DoxyParams}{Аргументы}
+{\em solutions} & структура с данными о решении квадратного уравнения \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \textbf{ enter\+\_\+print.\+cpp} строка \textbf{ 50}
+
+\index{enter\_print.cpp@{enter\_print.cpp}!program\_options\_input@{program\_options\_input}}
+\index{program\_options\_input@{program\_options\_input}!enter\_print.cpp@{enter\_print.cpp}}
+\doxysubsubsection{program\_options\_input()}
+{\footnotesize\ttfamily \label{enter__print_8cpp_ae3bcff4e95f525f7c2fb5c27cea5fe3d} 
+int program\+\_\+options\+\_\+input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Сохраняет и передает ответ пользователя на выбор действий в начале программы. \begin{DoxyReturn}{Возвращает}
+целочисленное число, означающее выбор пользователя 
+\end{DoxyReturn}
+
+
+См. определение в файле \textbf{ enter\+\_\+print.\+cpp} строка \textbf{ 9}
+

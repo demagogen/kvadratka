@@ -1,0 +1,33 @@
+\doxysection{color\+\_\+scheme\+\_\+changing.\+h}
+\label{color__scheme__changing_8h_source}\textbf{ См. документацию.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COLOR\_SCHEME\_CHANGING\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COLOR\_SCHEME\_CHANGING\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{enum}\ COLOR\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ BLACK\ \ \ =\ 0,\ }
+\DoxyCodeLine{00008\ \ \ \ \ RED\ \ \ \ \ =\ 1,\ }
+\DoxyCodeLine{00009\ \ \ \ \ GREEN\ \ \ =\ 2,\ }
+\DoxyCodeLine{00010\ \ \ \ \ YELLOW\ \ =\ 3,\ }
+\DoxyCodeLine{00011\ \ \ \ \ BLUE\ \ \ \ =\ 4,\ }
+\DoxyCodeLine{00012\ \ \ \ \ MAGENTA\ =\ 5,\ }
+\DoxyCodeLine{00013\ \ \ \ \ CYAN\ \ \ \ =\ 6,\ }
+\DoxyCodeLine{00014\ \ \ \ \ WHITE\ \ \ =\ 7,\ }
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{enum}\ STYLE\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ RESET\ \ \ \ \ \ \ \ \ =\ 0,\ }
+\DoxyCodeLine{00021\ \ \ \ \ BOLD\ \ \ \ \ \ \ \ \ \ =\ 1,\ }
+\DoxyCodeLine{00022\ \ \ \ \ UNDERLINE\ \ \ \ \ =\ 2,\ }
+\DoxyCodeLine{00023\ \ \ \ \ INVERSE\ \ \ \ \ \ \ =\ 3,\ }
+\DoxyCodeLine{00024\ \ \ \ \ BOLD\_OFF\ \ \ \ \ \ =\ 4,\ }
+\DoxyCodeLine{00025\ \ \ \ \ UNDERLINE\_OFF\ =\ 5,\ }
+\DoxyCodeLine{00026\ \ \ \ \ INVERSE\_OFF\ \ \ =\ 6,\ }
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ change\_color(COLOR\ color,\ STYLE\ style);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ graphic\_printf(COLOR\ color,\ STYLE\ style,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *st,\ ...);}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

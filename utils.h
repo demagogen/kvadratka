@@ -3,6 +3,7 @@
 
 /// @brief Перечислимый тип сравнений
 /// @details Содержит имена для результатов сравнения двух чисел.
+
 enum COMPARE_RESULT{
     LESS  = -1, ///<первое значение меньше
     EQUAL = 0,  ///<значения равны
@@ -10,14 +11,15 @@ enum COMPARE_RESULT{
 };
 
 enum ERROR_DATA{
-    PROGRAM_ERROR,
-    ENTER_ERROR,
-    VALIDATION_ERROR,
+    PROGRAM_ERROR,   ///<ошибка программы
+    ENTER_ERROR,     ///<ошибка при вводе
+    VALIDATION_ERROR,///<ошибка в тестах
 };
 
 const char* error_data_enum(ERROR_DATA error_inf);
 /// @brief Очищает буфер
 /// @details Очищает буфер для прочтения данных, которые введет пользователь после первой попытки.
+
 void clear_buffer();
 
 /// @brief Проверяет коэффициенты на допустимые значения
@@ -29,6 +31,7 @@ void clear_buffer();
 /// @param c третий коэффициент
 /// @return true -- если все параметры имеют допустимые значения,
 ///         false -- если хотя бы один из параметров не имеет допустимого значения
+
 bool is_parameters_valid(double a, double b, double c);
 
 /// @brief Сравнивает числа

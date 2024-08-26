@@ -1,0 +1,179 @@
+\doxysection{tests.\+cpp}
+\label{tests_8cpp_source}\textbf{ См. документацию.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}utils.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}solve\_square\_equation.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}tests.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}color\_scheme\_changing.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ number\_of\_solutions\_enum(NUMBER\_OF\_SOLUTIONS\ num\_of\_sol)\{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordflow}{switch}(num\_of\_sol)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ERROR\_NUMBER:}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ERROR\_NUMBER"{}};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ NO\_SOLUTIONS:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}NO\_SOLUTIONS"{}};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ONE\_SOLUTION:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ONE\_SOLUTION"{}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ TWO\_SOLUTIONS:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}TWO\_SOLUTIONS"{}};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ INF\_NUMBER\_OF\_SOLUTIONS:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}INF\_NUMBER\_OF\_SOLUTIONS"{}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ERROR\_VALUE"{}};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ TEST\_DATA\ test\_data\_array[]\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ .number\_of\_test\ =\ 1,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ .a\ =\ 0,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ .b\ =\ 0,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ .c\ =\ 0,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ .x1\_ex\ =\ NAN,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ .x2\_ex\ =\ NAN,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ .num\_of\_sol\_ex\ =\ INF\_NUMBER\_OF\_SOLUTIONS,}
+\DoxyCodeLine{00041\ \ \ \ \ \},}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ .number\_of\_test\ =\ 2,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ .a\ =\ 0,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ .b\ =\ 0,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ .c\ =\ 1,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ .x1\_ex\ =\ NAN,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ .x2\_ex\ =\ NAN,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ .num\_of\_sol\_ex\ =\ NO\_SOLUTIONS,}
+\DoxyCodeLine{00050\ \ \ \ \ \},}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ .number\_of\_test\ =\ 3,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ .a\ =\ 0,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ .b\ =\ 1,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ .c\ =\ 1,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ .x1\_ex\ =\ -\/1.0,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ .x2\_ex\ =\ NAN,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ .num\_of\_sol\_ex\ =\ ONE\_SOLUTION,}
+\DoxyCodeLine{00059\ \ \ \ \ \},}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ .number\_of\_test\ =\ 4,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ .a\ =\ 0,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ .b\ =\ 1,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ .c\ =\ 0,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ .x1\_ex\ =\ 0.0,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ .x2\_ex\ =\ NAN,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ .num\_of\_sol\_ex\ =\ ONE\_SOLUTION,}
+\DoxyCodeLine{00068\ \ \ \ \ \},}
+\DoxyCodeLine{00069\ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ .number\_of\_test\ =\ 5,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ .a\ =\ 1,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ .b\ =\ 0,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ .c\ =\ 0,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ .x1\_ex\ =\ 0.0,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ .x2\_ex\ =\ NAN,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ .num\_of\_sol\_ex\ =\ ONE\_SOLUTION,}
+\DoxyCodeLine{00077\ \ \ \ \ \},}
+\DoxyCodeLine{00078\ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ .number\_of\_test\ =\ 6,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ .a\ =\ 1,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ .b\ =\ 2,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ .c\ =\ 1,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ .x1\_ex\ =\ -\/1.0,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ .x2\_ex\ =\ NAN,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ .num\_of\_sol\_ex\ =\ ONE\_SOLUTION,}
+\DoxyCodeLine{00086\ \ \ \ \ \},}
+\DoxyCodeLine{00087\ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ .number\_of\_test\ =\ 7,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ .a\ =\ 1,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ .b\ =\ 1,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ .c\ =\ -\/6,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ .x1\_ex\ =\ 2.0,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ .x2\_ex\ =\ -\/3.0,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ .num\_of\_sol\_ex\ =\ TWO\_SOLUTIONS,}
+\DoxyCodeLine{00095\ \ \ \ \ \},}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ .number\_of\_test\ =\ 8,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ .a\ =\ 0.1,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ .b\ =\ 0.1,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ .c\ =\ 0.6,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ .x1\_ex\ =\ 2.0,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ .x2\_ex\ =\ -\/3.0,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ .num\_of\_sol\_ex\ =\ TWO\_SOLUTIONS,}
+\DoxyCodeLine{00104\ \ \ \ \ \},}
+\DoxyCodeLine{00105\ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ .number\_of\_test\ =\ 9,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ .a\ =\ 0.5,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ .b\ =\ -\/1,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ .c\ =\ 0.5,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ .x1\_ex\ =\ 1.0,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ .x2\_ex\ =\ NAN,}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ .num\_of\_sol\_ex\ =\ ONE\_SOLUTION,}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ quantity\_of\_tests\ =\ \textcolor{keyword}{sizeof}(test\_data\_array)\ /\ \textcolor{keyword}{sizeof}(test\_data\_array[0]);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{keywordtype}{bool}\ check\_test\_result(\textcolor{keyword}{const}\ TEST\_DATA\ *test\_data,\ SE\_SOLUTIONS\ *solutions\_test)\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ assert(solutions\_test);}
+\DoxyCodeLine{00121\ \ \ \ \ assert(test\_data);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ solve\_square\_equation(test\_data-\/>a,\ test\_data-\/>b,\ test\_data-\/>c,\ solutions\_test);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordflow}{if}\ (isnan(solutions\_test-\/>x1)\ ==\ isnan(test\_data-\/>x1\_ex)\ \&\&}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ isnan(solutions\_test-\/>x2)\ ==\ isnan(test\_data-\/>x2\_ex)\ \&\&}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ isfinite(solutions\_test-\/>x1)\ ==\ isfinite(test\_data-\/>x1\_ex)\ \&\&}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ isfinite(solutions\_test-\/>x2)\ ==\ isfinite(test\_data-\/>x2\_ex))\ \{}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (comparing\_function(solutions\_test-\/>x1,\ test\_data-\/>x1\_ex)\ ==\ EQUAL\ \&\&}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ comparing\_function(solutions\_test-\/>x2,\ test\_data-\/>x2\_ex)\ ==\ EQUAL\ \&\&}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ solutions\_test-\/>num\_of\_sol\ ==\ test\_data-\/>num\_of\_sol\_ex)\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00141\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{keywordtype}{void}\ print\_test\_result(\textcolor{keywordtype}{bool}\ check\_test\_result,\ \textcolor{keyword}{const}\ TEST\_DATA\ *test\_data,\ SE\_SOLUTIONS\ *solutions\_test)\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ assert(test\_data);}
+\DoxyCodeLine{00146\ \ \ \ \ assert(solutions\_test);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ ERROR\_DATA\ error\_inf\ =\ PROGRAM\_ERROR;}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ graphic\_printf(BLACK,\ BOLD,\ \textcolor{stringliteral}{"{}Старт\ теста\ \%d\(\backslash\)n"{}},\ test\_data-\/>number\_of\_test);}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{if}\ (check\_test\_result)\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ graphic\_printf(GREEN,\ BOLD,\ \textcolor{stringliteral}{"{}тест\ \%d\ пройден\(\backslash\)n"{}},\ test\_data-\/>number\_of\_test);}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ error\_inf\ =\ VALIDATION\_ERROR;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ graphic\_printf(RED,\ BOLD,\ \textcolor{stringliteral}{"{}\%s\(\backslash\)nОшибка\ в\ тесте\ \%d\(\backslash\)na\ =\ \%lf,\ b\ =\ \%lf,\ c\ =\ \%lf,\ num\_of\_sol\ =\ \%s,\ x1\ =\ \%lf,\ x2\ =\ \%lf\(\backslash\)n"{}}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}num\_of\_sol\ =\ \%s,\ x1\ =\ \%lf,\ x2\ =\ \%lf\(\backslash\)n"{}},\ error\_data\_enum(error\_inf),\ test\_data-\/>number\_of\_test,}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ test\_data-\/>a,\ test\_data-\/>b,\ test\_data-\/>c,\ number\_of\_solutions\_enum(test\_data-\/>num\_of\_sol\_ex),\ test\_data-\/>x1\_ex,}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ test\_data-\/>x2\_ex,\ number\_of\_solutions\_enum(solutions\_test-\/>num\_of\_sol),\ solutions\_test-\/>x1,\ solutions\_test-\/>x2);}
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+\DoxyCodeLine{00161\ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{keywordtype}{void}\ test\_functions\_runner()\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ SE\_SOLUTIONS\ solutions\_test\{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ NAN,\ NAN,}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ ERROR\_NUMBER}
+\DoxyCodeLine{00167\ \ \ \ \ \};}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ test\_index\ =\ 0;\ test\_index\ <\ quantity\_of\_tests;\ test\_index++)\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ print\_test\_result(check\_test\_result(\&test\_data\_array[test\_index],\ \&solutions\_test),}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&test\_data\_array[test\_index],}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&solutions\_test);}
+\DoxyCodeLine{00173\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \}}
+
+\end{DoxyCode}

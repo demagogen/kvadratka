@@ -1,38 +1,81 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include <assert.h>
 
 #include "flags.h"
 #include "tests.h"
 #include "color_scheme_changing.h"
 #include "utils.h"
 #include "enter_print.h"
+#include "solve_square_equation.h"
 
-int flag_input(int argc, char *argv[]) {
-    if (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--help") == 0) {
-        graphic_printf(BLACK, BOLD, "Использование: ./kvadratka [options] [value]");
-        //TODO
-    }
-    else if (strcmp(argv[1], "-V") == 0 || strcmp(argv[1], "--version") == 0) {
-        graphic_printf(BLACK, BOLD, "1.0.0");
-    }
-    else if (strcmp(argv[1], "-t") == 0 || strcmp(argv[1], "--test") == 0) {
-        test_functions_runner();
-    }
-    else if (strcmp(argv[1], "-s") == 0 || strcmp(argv[1], "--solve") == 0) {
-        double a = NAN, b = NAN, c = NAN;
-        SE_SOLUTIONS solutions {
-            NAN, NAN,
-            ERROR_NUMBER,
-        };
+static const size_t flags_array_max_size = 5;
+static int flags_array_counter = 0;
 
-        enter_se_parameters(&a, &b, &c);
-        solve_square_equation(a, b, c, &solutions);
-        print_solutions(&solutions);
+static FLAG flags_array[flags_array_max_size] = {};
+
+bool register_flag(const char *flag_short, const char *flag_long, FlagCallback callback) {
+    assert(flag_short);
+    assert(flag_long);
+    assert(callback);
+
+    if (flags_array_counter >= flags_array_max_size) {
+        return false;
     }
-    else {
-        graphic_printf(RED, BOLD, "%s\n", error_data_enum(ENTER_ERROR));
-        graphic_printf(BLACK, BOLD, "Воспользуйтесь флагом \"-h\" или \"--help\"");
+    *flags_array[flags_array_counter].flag_short = flag_short;
+    *flags_array[flags_array_counter].flag_long  = flag_long;
+     flags_array[flags_array_counter].callback   = callback;
+
+    flags_array_counter++;
+
+    return true;
+}
+
+void parse_flags(int argc, char *argv[]) {
+    assert(argv);
+
+    for (int enter_flags_counter = 1; enter_flags_counter < argc; enter_flags_counter++) {
+
+        for (int check_flag_counter = 0; check_flag_counter < flags_array_counter; check_flag_counter++) {
+
+            if (strcmp(*flags_array[check_flag_counter].flag_short, argv[enter_flags_counter]) == 0 ||
+                strcmp(*flags_array[check_flag_counter].flag_long,  argv[enter_flags_counter]) == 0) {
+
+                flags_array[check_flag_counter].callback();
+                break;
+            }
+            else if (check_flag_counter == flags_array_counter - 1) {
+                graphic_printf(RED, BOLD, "ААА, неверный флаг!!! АШЫПКА!!!: %s\n", argv[enter_flags_counter]);
+            }
+        }
     }
-    return 0;
+}
+
+void help_flag(){
+    graphic_printf(BLACK, BOLD, "Использование: ./kvadratka [options]\n");
+    exit(0);
+}
+
+void test_flag(){
+    test_functions_runner();
+}
+
+void version_flag() {
+    graphic_printf(BLACK, BOLD, "Версия 1.0.0 Poltorashka Edition");
+    //exit(0);
+}
+
+void solve_flag() {
+    double a = NAN, b = NAN, c = NAN;
+    ERROR_DATA error_inf = PROGRAM_ERROR;
+    SE_SOLUTIONS solutions {
+        NAN, NAN,
+        ERROR_NUMBER
+    };
+    enter_se_parameters(&a, &b, &c);
+    solve_square_equation(a, b, c, &solutions);
+    print_solutions(&solutions);
+
+    exit(0);
 }

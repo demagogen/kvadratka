@@ -28,7 +28,7 @@ struct SE_SOLUTIONS{
 ///          и сохраняет данные в структуру solutions.
 /// @param b второй коэффициент
 /// @param c третий коэффициент
-/// @param solutions структура с данными о решении уравнения\
+/// @param solutions структура с данными о решении уравнения
 
 void linear_equation(double b, double c, SE_SOLUTIONS *solutions);
 

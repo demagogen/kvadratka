@@ -1,6 +1,5 @@
 // main.cpp -- программа для решения квадратных уравнений
 #include <math.h>
-#include <stdio.h> //для тестов TODO удалить
 
 #include "solve_square_equation.h"
 #include "enter_print.h"

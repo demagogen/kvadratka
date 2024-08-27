@@ -4,6 +4,7 @@
 /// @brief Перечисляемый тип данных о решениях уравнения
 /// @details Перечислимый тип данных о решениях уравнения,
 ///          содержащий информацию о количестве корней.
+
 enum NUMBER_OF_SOLUTIONS {
     ERROR_NUMBER            = 0, ///<ошибочное значение
     NO_SOLUTIONS            = 1, ///<нет решений
@@ -16,6 +17,7 @@ enum NUMBER_OF_SOLUTIONS {
 /// @details Структура с данными о решении уравнения, в
 ///          в которую сохраняется информация о решении
 ///          квадратного уравнения.
+
 struct SE_SOLUTIONS{
     double x1 = 0, x2 = 0;
     NUMBER_OF_SOLUTIONS num_of_sol = ERROR_NUMBER;
@@ -26,7 +28,8 @@ struct SE_SOLUTIONS{
 ///          и сохраняет данные в структуру solutions.
 /// @param b второй коэффициент
 /// @param c третий коэффициент
-/// @param solutions структура с данными о решении уравнения
+/// @param solutions структура с данными о решении уравнения\
+
 void linear_equation(double b, double c, SE_SOLUTIONS *solutions);
 
 /// @brief Решает квадратное уравнение (общий случай)
@@ -36,6 +39,7 @@ void linear_equation(double b, double c, SE_SOLUTIONS *solutions);
 /// @param b второй коэффициент
 /// @param c третий коэффициент
 /// @param solutions структура с данными о решении уравнения
+
 void quadratic_equation(double a, double b, double c, SE_SOLUTIONS *solutions);
 
 /// @brief Решает квадратное уравнение
@@ -46,5 +50,6 @@ void quadratic_equation(double a, double b, double c, SE_SOLUTIONS *solutions);
 /// @param b второй коэффициент
 /// @param c третий коэффициент
 /// @param solutions структура с данными о решении уравнения
+
 void solve_square_equation(double a, double b, double c, SE_SOLUTIONS *solutions);
 #endif

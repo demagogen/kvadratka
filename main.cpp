@@ -21,7 +21,7 @@ void test_flag(){
 
 void version_flag() {
     graphic_printf(BLACK, BOLD, "Версия 1.0.0 Poltorashka Edition\n");
-    //exit(0);
+    exit(0);
 }
 
 void solve_flag() {

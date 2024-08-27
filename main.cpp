@@ -30,6 +30,7 @@ void solve_flag() {
         NAN, NAN,
         ERROR_NUMBER
     };
+
     enter_se_parameters(&a, &b, &c);
     solve_square_equation(a, b, c, &solutions);
     print_solutions(&solutions);
